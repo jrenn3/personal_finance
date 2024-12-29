@@ -3,45 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joe's Flows | Home</title>
-    <link rel="icon" type="image/x-icon" href="../assets/cash-in-hand.png"> <!-- FIX -->
-    <meta name="description" content="The only budget spreadsheet you'll need… and actually use">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>JR's Fund Forecast | Home</title>
+    <meta name="description" content="The only budgeting spreadsheet you'll need… and actually use">
     <link rel="stylesheet" href="/src/styles/styles.css">
+    <script src="https://cdn.tailwindcss.com"></script> <!-- TBD FIX AND DELETE -->
 </head>
 <body class="bg-gray-100 text-gray-900">
-    <header>
-        <h1 class="text-3xl font-bold underline text-center">Joe's Flows</h1>
-        <nav>
-        </nav>
-    </header>
+
     <main>
-        <section id="welcome">
-            <p>A comprehensive budgeting tool without the distractions. For people who want consistent results.</p>
-            <button>Download Now</button>
+
+        <!-- Welcome / Hero Section -->
+        <section class="bg-gradient-to-r from-blue-500 to-teal-400 text-white py-16 text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl font-bold mb-4">Take Control of Your Budget</h1>
+                <p class="text-lg mb-6">A comprehensive budgeting tool without the distractions. For people who want consistent results.</p>
+                <a href="/budget-spreadsheet.xlsx" download 
+                class="bg-white text-blue-500 px-6 py-3 rounded-lg shadow-md hover:bg-gray-100">
+                Download Now
+                </a> <!--TBD ADD FILE INTO DIRECTORY-->
+            </div>
         </section>
-        <section id="features">
-            <p>Why choose JR's Fund Forecast Model?</p>
-            <ol>
-                <li>Future focused: Sick of logging past transactions? Don’t. Review where you want to go, not where you’ve been.</li>
-                <li>Streamlined Design: Actions matter, not visuals. We minimize distracting, redundant graphics to show you only what you need.</li>
-                <li>TBD</li>
-            </ol>
+
+        <!-- Features Section -->
+        <section class="py-12 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center mb-8">Why choose JR's Fund Forecast model?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-6 bg-white rounded-lg shadow-md text-center">
+                        <h3 class="text-xl font-bold mb-4">Future Focused</h3>
+                        <p class="text-gray-600">Sick of logging past transactions? So are we. Review where you want to go, not where you’ve been.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md text-center">
+                        <h3 class="text-xl font-bold mb-4">Streamlined Design</h3>
+                        <p class="text-gray-600">Actions matter, not visuals. We minimize distracting, redundant graphics to show you only what you need.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-lg shadow-md text-center">
+                        <h3 class="text-xl font-bold mb-4">Lorem ipsum</h3> <!--TBD-->
+                        <p class="text-gray-600">Sagittis sollicitudin diam pretium accumsan tortor montes turpis orci.</p> <!--TBD-->
+                    </div>
+                </div>
+            </div>
         </section>
-        <section id="call_to_action">
-            <p>Ready to get started?</p>
-            <button>Download Now</button>
-            <p>Downloaded? Here's what you should do next:</p>
-                <ol>
-                    <li>Rename to add your name, but keep the version number in the file path.</li>
-                    <li>TBD</li>
-                </ol>
+
+        <!-- Call to Action / Guidance Section -->
+        <section class="py-16 bg-blue-100 text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-4">Ready to get started?</h2>
+                <p class="text-gray-700 mb-6">Follow these steps:</p>
+                <ul class="list-inside list-disc text-left max-w-md mx-auto mb-6">
+                    <li>1. Download the spreadsheet on this site.</li>
+                    <li>2. Open it in Excel.</li>
+                    <li>3. Rename, but keep the version number in the file path.</li>
+                    <li>4. Update regularly to stay on track!</li>
+                </ul>
+                <a href="/budget-spreadsheet.xlsx" download  
+                class="bg-blue-500 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-600">
+                Get Started Now
+                </a> <!--TBD ADD FILE INTO DIRECTORY-->
+            </div>
         </section>
-        <footer>
+
+        <footer class="py-4 bg-gray-200 text-center">
             <p>Website created from scratch by Joseph M. Renner.</p>
             <a href="https://github.com/jrenn3">GitHub</a>
+            <p class="text-gray-600">&copy; 2024. All Rights Reserved.</p>
         </footer>
+
     </main>
     <script type="module" src="/src/main.js"></script>
+
 </body>
 </html>

@@ -1,3 +1,7 @@
 import './styles/styles.css';
 
-console.log('Hello from Vite!');
+document.querySelectorAll('a[download]').forEach(button => {
+    button.addEventListener('click', () => {
+        alert('Your download will start shortly!');
+    });
+});
