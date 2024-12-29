@@ -1,2 +1,6 @@
 .DS_Store
-.DS_Store
+public/.DS_Store
+node_modules/.DS_Store
+dist/.DS_Store
+node_modules/@firebase/auth/.DS_Store
+node_modules/firebase/.DS_Store
