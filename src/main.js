@@ -6,11 +6,12 @@ import { ref, push } from 'firebase/database';
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('userModal');
     const form = document.getElementById('userForm');
-    const downloadButton = document.querySelector('a[download]');
+    const showModalBtn = document.getElementById('showModalBtn');
+
+    const modelURL = 'public/files/Funds Forecast Model_TEMPLATEv3.xlsm'; // Path to your spreadsheet
 
     // Show the modal when the download button is clicked
-    downloadButton.addEventListener('click', (e) => {
-        e.preventDefault(); // Prevent direct download
+    showModalBtn.addEventListener('click', () => {
         modal.classList.remove('hidden');
     });
 
@@ -30,10 +31,14 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .then(() => {
             modal.classList.add('hidden'); // Hide the modal
-            alert('Thank you! Your download will start now.');
+            
+            // Trigger the file download programmatically
+            const link = document.createElement('a');
+            link.href = modelURL;
+            link.download = 'Funds Forecast Model_TEMPLATEv3.xlsm';
+            link.click();
 
-            // Trigger the file download
-            downloadButton.click();
+            alert('Thank you! Your model should be downloading.');
         })
         .catch((error) => {
             console.error('Error saving data:', error);
