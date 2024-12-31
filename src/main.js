@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('userForm');
     const showModalBtn = document.getElementById('showModalBtn');
 
-    const modelURL = 'public/files/Funds Forecast Model_TEMPLATEv3.xlsm'; // Path to your spreadsheet
+    const modelURL = '/public/files/Funds Forecast Model_EXAMPLEv4.xlsm'; // Path to your spreadsheet
 
     // Show the modal when the download button is clicked
     showModalBtn.addEventListener('click', () => {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             // Trigger the file download programmatically
             const link = document.createElement('a');
             link.href = modelURL;
-            link.download = 'Funds Forecast Model_TEMPLATEv3.xlsm';
+            link.download;
             link.click();
 
             alert('Thank you! Your model should be downloading.');
