@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('userForm');
     const showModalBtn = document.getElementById('showModalBtn');
 
-    const modelURL = '/public/files/Funds Forecast Model_EXAMPLEv4.xlsm'; // Path to your spreadsheet
+    const modelURL =  '/personal_finance/dist/files/Funds Forecast Model_EXAMPLEv4.xlsm'; // Path to your spreadsheet
 
     // Show the modal when the download button is clicked
     showModalBtn.addEventListener('click', () => {
