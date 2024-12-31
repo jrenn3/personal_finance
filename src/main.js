@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         push(ref(database, 'downloads/'), {
             name,
             email,
+            modelURL,
             timestamp,
         })
         .then(() => {
