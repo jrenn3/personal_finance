@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const showModalBtns = document.querySelectorAll('.showModalBtn');
 
     const modelURL =  '/personal_finance/files/Funds_Forecast_Model_EXAMPLEv4.xlsm'; // Path to your spreadsheet
+    const modelName = modelURL.split('/').pop();
 
     // Iterate over all buttons and add event listeners
     showModalBtns.forEach((button) => {
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         push(ref(database, 'downloads/'), {
             name,
             email,
-            modelURL,
+            modelName,
             timestamp,
         })
         .then(() => {
