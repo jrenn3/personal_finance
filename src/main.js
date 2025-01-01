@@ -6,14 +6,19 @@ import { ref, push } from 'firebase/database';
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('userModal');
     const form = document.getElementById('userForm');
-    const showModalBtn = document.getElementById('showModalBtn');
+    const showModalBtns = document.querySelectorAll('.showModalBtn');
 
     const modelURL =  '/personal_finance/files/Funds_Forecast_Model_EXAMPLEv4.xlsm'; // Path to your spreadsheet
 
-    // Show the modal when the download button is clicked
-    showModalBtn.addEventListener('click', () => {
-        modal.classList.remove('hidden');
+    // Iterate over all buttons and add event listeners
+    showModalBtns.forEach((button) => {
+        button.addEventListener('click', () => {
+
+            // Open the modal
+            modal.classList.remove('hidden');
+        });
     });
+
 
     // Handle form submission
     form.addEventListener('submit', (e) => {
