@@ -7,7 +7,7 @@ const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: myEmail,
-    pass: "ruhso2-sicGab-famqes",
+    pass: "ayfl whbs chyg zxaa",
   },
 });
 
@@ -15,8 +15,8 @@ exports.sendEmailOnDatabaseWrite = onValueCreated("/downloads/{pushId}", async (
   const data = event.data.val(); // Access new database entry
   const mailOptions = {
     from: myEmail,
-    to: myEmail,
-    subject: `New Download Submission from ${data.name}`,
+    to: "jmren3@gmail.com",
+    subject: `New FUNds download by ${data.name}`,
     text: `
             Name: ${data.name}
             Email: ${data.email}
