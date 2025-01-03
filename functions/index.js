@@ -15,7 +15,7 @@ exports.sendEmailOnDatabaseWrite = onValueCreated("/downloads/{pushId}", async (
   const data = event.data.val(); // Access new database entry
   const mailOptions = {
     from: myEmail,
-    to: "jmren3@gmail.com",
+    to: "jmren3@gmail.com, marissamhemmings@gmail.com",
     subject: `New FUNds download by ${data.name}`,
     text: `
             Name: ${data.name}
