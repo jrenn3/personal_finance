@@ -1,7 +1,7 @@
 import './styles/styles.css'; //ensures Vite bundles Tailwind CSS styles
 
 import database from './firebase';
-import { ref, push } from 'firebase/database';
+import { ref, push, onValue } from 'firebase/database';
 
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('userModal');
@@ -51,5 +51,16 @@ document.addEventListener('DOMContentLoaded', () => {
             console.error('Error saving data:', error);
             alert('An error occurred. Please try again.');
         });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const downloadCountElement = document.getElementById('downloadCount');
+    const downloadsRef = ref(database, 'downloads');
+
+    // Listen for changes to the downloads node
+    onValue(downloadsRef, (snapshot) => {
+        const totalDownloads = snapshot.exists() ? snapshot.size : 0; // Get the count of child nodes
+        downloadCountElement.textContent = `${totalDownloads} happy downloads`; // Update the count with text
     });
 });
