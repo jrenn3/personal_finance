@@ -8,3 +8,11 @@
     background-size: cover;
     background-position: center;
 }
+
+/* Define Giaza Font */
+@font-face {
+    font-family: 'Giaza';
+    src: url('../../public/fonts/Giaza.otf') format('opentype');
+    font-weight: 400; /* Regular weight */
+    font-style: normal;
+}
