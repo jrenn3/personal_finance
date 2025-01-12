@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('userForm');
     const showModalBtns = document.querySelectorAll('.showModalBtn');
 
-    const modelURL =  '/personal_finance/files/Funds_Forecast_Model_EXAMPLEv4.xlsm'; // Path to your spreadsheet
+    const modelURL =  '/personal_finance/files/FUNdsForecastModel_v5.zip'; // Path to your spreadsheet
     const modelName = modelURL.split('/').pop();
 
     // Iterate over all buttons and add event listeners
