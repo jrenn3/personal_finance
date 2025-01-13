@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.download;
             link.click();
 
-            alert('Thank you! Your model should be downloading.');
+            alert("Thank you! Your model should download now.\n\nWe will let you know via email when there are version updates to the model.");
         })
         .catch((error) => {
             console.error('Error saving data:', error);
