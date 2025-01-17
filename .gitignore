@@ -8,3 +8,4 @@ node_modules/.DS_Store
 node_modules/jiti/.DS_Store
 node_modules/yaml/.DS_Store
 public/.DS_Store
+node_modules
