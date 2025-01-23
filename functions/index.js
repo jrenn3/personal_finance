@@ -20,6 +20,8 @@ exports.sendEmailOnDatabaseWrite = onValueCreated("/downloads/{pushId}", async (
     text: `
             Name: ${data.name}
             Email: ${data.email}
+            Source: ${data.source}
+            Model: ${data.modelName}
             Timestamp: ${data.timestamp}
         `,
   };

@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
+        const source = document.getElementById('source').value;
         const timestamp = new Date().toISOString();
 
         // Save user details to Firebase
@@ -34,6 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             name,
             email,
             modelName,
+            source,
             timestamp,
         })
         .then(() => {
