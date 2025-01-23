@@ -34,7 +34,7 @@ export function initScrollAnimations() {
           }
         });
       },
-      { threshold: 0.3 } // Trigger when 50% of the hero is in view
+      { threshold: 0.5 } // Trigger when 50% of the hero is in view
     );
   
     observer.observe(hero);
