@@ -2,6 +2,13 @@ import './styles/styles.css'; //ensures Vite bundles Tailwind CSS styles
 
 import database from './firebase';
 import { ref, push, onValue } from 'firebase/database';
+import { initScrollAnimations } from './animations.js';
+
+// Initialize all scroll animations
+document.addEventListener('DOMContentLoaded', () => {
+  initScrollAnimations();
+});
+
 
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.getElementById('userModal');
