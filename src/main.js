@@ -64,3 +64,22 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadCountElement.textContent = `${totalDownloads} happy downloads`; // Update the count with text
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const copyLinkBtn = document.getElementById('copyLinkBtn');
+    
+    copyLinkBtn.addEventListener('click', () => {
+        // The URL to copy (can be the current page URL or a specific one)
+        const urlToCopy = window.location.href;
+
+        // Use the Clipboard API to copy the URL
+        navigator.clipboard.writeText(urlToCopy)
+            .then(() => {
+                // Notify the user that the link has been copied
+                alert('Link copied to clipboard!');
+            })
+            .catch((err) => {
+                console.error('Failed to copy link: ', err);
+            });
+    });
+});
