@@ -6,28 +6,20 @@
     <title>FUNds Forecast</title>
     <link rel="stylesheet" href="/src/styles/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll/dist/locomotive-scroll.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<body data-scroll-container class="bg-neutral-light text-neutral-dark">
+<body data-scroll-container class="bg-neutral-light text-neutral-dark"> <!--?? what does "data-scroll-container" do-->
 
     <!-- HEADER -->
     <header id="header" class="fixed top-0 left-0 w-full bg-white z-50 shadow-sm transition-all duration-300">
-        <div class="container mx-auto flex justify-between items-center px-6 py-4">
-            <!-- Logo -->
-            <div class="logo">
-                <a href="#" class="text-primary text-2xl font-bold">🟢</a>
-            </div>
+        <div class="container mx-auto flex justify-center items-center px-6 py-4">
+            <div class="logo mr-auto">
+              <a href="#" class="text-lg font-giaza text-primary tracking-tighter">FUNds</a>  
+            </div> 
             <!-- Navigation Menu -->
-            <nav class="hidden md:flex space-x-8">
-                <a href="#" class="text-neutral-dark hover:text-primary">Home</a>
-                <a href="#" class="text-neutral-dark hover:text-primary">Features</a>
-                <a href="#" class="text-neutral-dark hover:text-primary">About Us</a>
-                <a href="#" class="text-neutral-dark hover:text-primary">Release Notes</a>
+            <nav class="md:flex space-x-8">
+                <a href="./src/pages/release-notes.html" class="text-neutral-dark hover:text-primary">Release Notes</a>
             </nav>
-            <!-- Hamburger Menu -->
-            <div id="hamburger" class="md:hidden text-neutral-dark">
-                <i class="fas fa-bars"></i>
-            </div>
         </div>
     </header>
 
@@ -35,22 +27,73 @@
     <section id="hero" class="h-screen flex flex-col items-center justify-center text-center bg-white relative">
         <h1 id="heroHeadline" class="text-6xl font-bold mb-6">SPEND IT WELL</h1>
         <p id="heroSubHeadline" class="text-xl">Find comfort with your cash flows using the FUNds Forecast model</p>
-        <button id="downloadCTA" class="mt-8 bg-primary text-white px-8 py-4 rounded-lg">
-            Download Now
+        
+        <!-- Button with Excel Icon -->
+        <button class="showModalBtn bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary-light flex items-center justify-center mx-auto space-x-3 mt-8">
+          <i class="fas fa-file-excel text-white text-xl"></i>
+          <span>Download Now</span>
         </button>
+
+        <p class="text-xs italic mt-4" id="downloadCount">_ happy downloads</p>
+                
         <div id="heroBox" class="absolute bottom-0 w-full bg-primary h-16"></div>
     </section>
 
-    <!-- SCENES (INTRO, FEATURES, ACTIONS) -->
+    <!-- SCENE1  ?? Use javascript to render each Scene?-->
     <section id="scene1" class="h-screen flex flex-col items-center justify-center bg-neutral-light">
         <h2 class="text-4xl font-bold">The FUNds Forecast</h2>
         <img src="/public/excel-screenshot-ntm.png" alt="Excel Workbook NTM Tab" class="max-w-4xl shadow-lg rounded-lg">
     </section>
 
+    <!-- SCENE2 -->
+
+
+    
+    <!-- SCENE3 -->
+
+
+
+    <!-- SCENE4 -->
+
+
+
+    <!-- SCENE5 -->
+
+
+
     <!-- FOOTER -->
     <footer class="bg-neutral-charcoal text-white text-center py-4">
         <p>&copy; 2025 FUNds Forecast. All rights reserved.</p>
     </footer>
+
+    <!-- User Input Modal -->
+    <div id="userModal" class="hidden fixed inset-0 bg-neutral-dark bg-opacity-50 flex items-center justify-center">
+      <div class="bg-white rounded-lg p-6 w-full max-w-sm">
+          <h2 class="text-xl font-bold mb-4 text-primary">Enter Your Details</h2>
+          <form id="userForm">
+              <!-- Name Field -->
+              <div class="mb-4">
+                  <label for="name" class="block text-neutral-dark">Name</label>
+                  <input type="text" id="name" class="w-full px-3 py-2 border rounded" required />
+              </div>
+              <!-- Email field -->
+              <div class="mb-4">
+                  <label for="email" class="block text-neutral-dark">Email</label>
+                  <input type="email" id="email" class="w-full px-3 py-2 border rounded" required />
+              </div>
+              <!-- Source of Discovery Input -->
+              <div class="mb-4">
+                  <label for="source" class="block text-gray-700">How did you find us?</label>
+                  <textarea id="source" class="w-full px-3 py-2 border rounded" rows="3" placeholder="e.g., friend's name, Google, social media" required></textarea>
+              </div>
+              <!-- Submit button -->
+              <button type="submit" class="showModalBtn bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary-light flex items-center justify-center mx-auto space-x-3">
+                  <i class="fas fa-file-excel text-white text-xl"></i>
+                  <span>Download Excel</span>
+              </button>
+          </form>
+      </div>
+    </div>
 
     <script type="module" src="/src/main.js"></script>
 </body>
