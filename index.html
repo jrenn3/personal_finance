@@ -40,12 +40,31 @@
     <!-- SCENE1  ?? Use javascript to render each Scene?-->
     <section id="scene1" class="flex flex-col items-center justify-center bg-neutral-light my-20">
         <h2 class="text-4xl font-bold">The FUNds Forecast</h2>
-        <img src="/public/images/macbook_NTM_screen.png" alt="Excel Workbook NTM Tab" class="w-full max-w-4xl mx-4 rounded-lg">
+        <img src="/public/images/macbook_NTM.png" alt="Excel Workbook NTM Tab" class="w-full max-w-4xl mx-4 rounded-lg">
     </section>
 
-    <!-- SCENE2 -->
+    <!-- SCENE 2: NTM FEATURES -->
+    <section id="scene2" class="h-screen flex items-center justify-center bg-neutral-light relative">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
+            
+            <!-- Left Side: Zoomed-in Excel Screenshot -->
+            <div id="scene2-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
+                <img src="public/images/window_NTM.png" alt="Excel NTM Tab" class="max-w-lg shadow-lg rounded-lg">
+            </div>
 
-
+            <!-- Right Side: Feature Callout -->
+            <div class="w-full lg:w-1/2">
+                <h2 id="scene2-headline" class="text-4xl font-bold text-primary transition-all">
+                    The FUNds Forecast… is future focused
+                </h2>
+                <div id="scene2-callout" class="mt-6 text-xl transform translate-y-10">
+                    <p class="bg-white shadow-md rounded-lg p-6">
+                        Sick of logging past transactions? Don’t. Review where you want to go, not where you’ve been.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- SCENE3 -->
 

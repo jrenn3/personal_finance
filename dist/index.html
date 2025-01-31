@@ -6,8 +6,8 @@
     <title>FUNds Forecast</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script type="module" crossorigin src="./assets/main-C93zIi1Y.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/styles-_01-4DYZ.css">
+  <script type="module" crossorigin src="./assets/main-BlZnVY6S.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/styles-Dg4Fhn04.css">
 </head>
 <body data-scroll-container class="bg-neutral-light text-neutral-dark"> <!--?? what does "data-scroll-container" do-->
 
@@ -41,12 +41,31 @@
     <!-- SCENE1  ?? Use javascript to render each Scene?-->
     <section id="scene1" class="flex flex-col items-center justify-center bg-neutral-light my-20">
         <h2 class="text-4xl font-bold">The FUNds Forecast</h2>
-        <img src="./assets/macbook_NTM_screen-DZKWvsJO.png" alt="Excel Workbook NTM Tab" class="w-full max-w-4xl mx-4 rounded-lg">
+        <img src="./assets/macbook_NTM-DZKWvsJO.png" alt="Excel Workbook NTM Tab" class="w-full max-w-4xl mx-4 rounded-lg">
     </section>
 
-    <!-- SCENE2 -->
+    <!-- SCENE 2: NTM FEATURES -->
+    <section id="scene2" class="h-screen flex items-center justify-center bg-neutral-light relative">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
+            
+            <!-- Left Side: Zoomed-in Excel Screenshot -->
+            <div id="scene2-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
+                <img src="./assets/window_NTM-CWVcDfAK.png" alt="Excel NTM Tab" class="max-w-lg shadow-lg rounded-lg">
+            </div>
 
-
+            <!-- Right Side: Feature Callout -->
+            <div class="w-full lg:w-1/2">
+                <h2 id="scene2-headline" class="text-4xl font-bold text-primary transition-all">
+                    The FUNds Forecast… is future focused
+                </h2>
+                <div id="scene2-callout" class="mt-6 text-xl opacity-0 transform translate-y-10">
+                    <p class="bg-white shadow-md rounded-lg p-6">
+                        Sick of logging past transactions? Don’t. Review where you want to go, not where you’ve been.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
     
     <!-- SCENE3 -->
 
