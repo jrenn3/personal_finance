@@ -7,7 +7,7 @@ export default defineConfig({
         input: {
             main: './index.html', 
             releaseNotes: './src/pages/release-notes.html',
-            moreTools: './src/pages/more-tools.html', 
+            moreTools: './src/pages/more.html', 
         },
     },
   },
