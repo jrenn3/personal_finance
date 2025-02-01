@@ -3,133 +3,201 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FUNds Forecast</title>
-    <link rel="icon" href="./assets/favicon-DZ-_nTyu.png" type="image/png">
-    <meta name="description" content="The only budgeting spreadsheet you'll need… and actually use">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Giaza:wght@400;700&display=swap">
-  <script type="module" crossorigin src="./assets/main-Cco9tjah.js"></script>
-  <link rel="stylesheet" crossorigin href="./assets/styles-B9czbsCZ.css">
+    <title>FUNds Forecast</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script type="module" crossorigin src="./assets/main-CuiBt4lW.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/styles-BaQWDi8C.css">
 </head>
-<body class="bg-neutral-light text-neutral-dark">
-    <!-- Header -->
-    <header class="bg-primary text-center py-4">
-        <h1 class="text-5xl font-giaza text-white tracking-tighter">FUNds</h1>
+<body data-scroll-container class="bg-neutral-light text-neutral-dark"> <!--?? what does "data-scroll-container" do-->
+
+    <!-- HEADER -->
+    <header id="header" class="fixed top-0 left-0 w-full bg-white z-50 shadow-sm transition-all duration-300">
+        <div class="container mx-auto flex justify-center items-center px-6 py-4">
+            <div class="logo mr-auto">
+              <a href="#" class="text-lg font-giaza text-primary tracking-tighter">FUNds</a>  
+            </div> 
+            <!-- Navigation Menu -->
+            <nav class="flex flex-wrap space-x-4 md:space-x-8">
+                <a href="./src/pages/release-notes.html" class="text-neutral-dark hover:text-primary whitespace-nowrap">Release Notes</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <!-- HERO -->
+    <section id="hero" class="h-screen flex flex-col items-center justify-center text-center bg-white relative">
+        <h1 id="heroHeadline" class="text-6xl font-bold mb-6">SPEND IT WELL</h1>
+        <p id="heroSubHeadline" class="text-xl">Find comfort with your cash flows using the FUNds Forecast model</p>
         
-        <!-- Welcome / Hero Section -->
-        <section class="bg-primary text-white py-16 text-center">
-            <div class="container mx-auto px-4">
-                <h1 class="text-4xl font-bold mb-4">Take Control of Your Cash Flows</h1>
-                <p class="text-lg mb-6">A comprehensive budgeting tool without the distractions. For people who want consistent results.</p>
-                <!-- Button with Excel Icon -->
-                <button class="showModalBtn bg-support-gold text-primary px-6 py-3 rounded-lg shadow-md hover:bg-support-beige flex items-center justify-center mx-auto space-x-3 mb-2">
-                    <i class="fas fa-file-excel text-primary text-xl"></i>
-                    <span>Download Now</span>
-                </button>
-                <!-- Download Count -->
-                <p class="text-xs italic mb-8" id="downloadCount">_ happy downloads</p>
-                <!-- Copy Link Button -->
-                <button id="copyLinkBtn" class="bg-gray-200 text-primary px-4 py-2 rounded-lg shadow-md hover:bg-gray-300 flex items-center justify-center mx-auto space-x-2">
-                    <i class="fas fa-copy"></i>
-                    <span>Share with a friend</span>
-                </button>
-            </div>
-        </section>
-        
+        <!-- Button with Excel Icon -->
+        <button class="showModalBtn bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary-light flex items-center justify-center mx-auto space-x-3 mt-8">
+          <i class="fas fa-file-excel text-white text-xl"></i>
+          <span>Download Now</span>
+        </button>
 
-        <!-- Features Section -->
-        <section class="py-12 bg-neutral-light">
-            <div class="container mx-auto px-4">
-                <h2 class="text-3xl font-bold text-center mb-8">Why choose the FUNds Forecast model?</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="p-6 bg-white rounded-lg shadow-md text-center">
-                        <h3 class="text-xl font-bold mb-4">Future Focused</h3>
-                        <p class="text-neutral-dark">Sick of logging past transactions? So are we. Review where you want to go, not where you’ve been.</p>
-                    </div>
-                    <div class="p-6 bg-white rounded-lg shadow-md text-center">
-                        <h3 class="text-xl font-bold mb-4">Streamlined Design</h3>
-                        <p class="text-neutral-dark">Actions matter, not visuals. We minimize distracting, redundant graphics to show you only what you need.</p>
-                    </div>
-                    <div class="p-6 bg-white rounded-lg shadow-md text-center">
-                        <h3 class="text-xl font-bold mb-4">Old-School Secure</h3> 
-                        <p class="text-neutral-dark">Instead of giving your sensitive financial data to a third party, put it into an Excel—and you decide where is safe to save it.</p>
-                    </div>
+        <p class="text-xs italic mt-4" id="downloadCount">_ happy downloads</p>
+    </section>
+
+    <!-- SCENE1  ?? Use javascript to render each Scene?-->
+    <section id="scene1" class="flex flex-col items-center justify-center bg-neutral-light my-20">
+        <h2 class="text-4xl font-bold">The FUNds Forecast</h2>
+        <img src="./assets/macbook_NTM-DZKWvsJO.png" alt="Excel Workbook NTM Tab" class="w-full max-w-4xl mx-4 rounded-lg">
+    </section>
+
+    <!-- SCENE 2: NTM FEATURES -->
+    <section id="scene2" class="h-screen flex items-center justify-center bg-neutral-light relative">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
+            
+            <!-- Left Side: Zoomed-in Excel Screenshot -->
+            <div id="scene2-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
+                <img src="./assets/window_NTM-Cgl8hPLy.png" alt="Excel NTM Tab" class="max-w-lg shadow-lg rounded-lg">
+            </div>
+
+            <!-- Right Side: Feature Callout -->
+            <div class="w-full lg:w-1/2">
+                <h2 id="scene2-headline" class="text-4xl font-bold text-primary transition-all">
+                    The FUNds Forecast… is future focused
+                </h2>
+                <div id="scene2-callout" class="mt-6 text-xl transform translate-y-10">
+                    <p class="bg-white shadow-md rounded-lg p-6">
+                        Sick of logging past transactions? Don’t. Review where you want to go, not where you’ve been.
+                    </p>
                 </div>
             </div>
-        </section>
-
-        <!-- Call to Action / Guidance Section -->
-        <section class="py-16 bg-primary-mint text-center">
-            <div class="container mx-auto px-4">
-                <h2 class="text-2xl font-bold mb-4">Ready to get started?</h2>
-                <p class="text-neutral-dark mb-6">Follow these steps:</p>
-                <ul class="list-inside list-disc text-left max-w-md mx-auto mb-6">
-                    <li>1. Download the zip file with the button below.</li>
-                    <li>2. Extract the TEMPLATE and EXAMPLE files.
-                        <ul class="list-inside list-disc pl-6">
-                            <li>The EXAMPLE file includes sample inputs and callouts.</li>
-                            <li>The TEMPLATE file is completely blank for your inputs.</li>
-                        </ul>
-                    </li>
-                    <li>3. Open in Excel.</li>
-                    <li>4. Rename the TEMPLATE, but keep the version number in the file path.</li>
-                    <li>5. Update regularly to stay on track!</li>
-                </ul>
-                <button class="showModalBtn bg-support-gold text-primary px-6 py-3 rounded-lg shadow-md hover:bg-support-beige flex items-center justify-center mx-auto space-x-3">
-                    <i class="fas fa-file-excel text-primary text-xl"></i>
-                    <span>Get Started</span>
-                </button>
-            </div>
-        </section>
-
-        
-    </main>
-
-    <footer class="py-4 bg-primary text-white text-center">
-        <p>Website and Excel model created from scratch by Joseph M. Renner.</p> 
-        <div class="flex justify-center space-x-6 mb-2">
-            <a href="https://github.com/jrenn3" target="_blank" aria-label="GitHub">
-                <i class="fab fa-github text-2xl hover:text-support-gold"></i>
-            </a>
-            <a href="www.linkedin.com/in/j-renner" target="_blank" aria-label="LinkedIn">
-                <i class="fab fa-linkedin text-2xl hover:text-support-gold"></i>
-            </a>
         </div>
-        <p>&copy; 2025. All Rights Reserved. Also not financial advice.</p>
-        <p><a href="./src/pages/release-notes.html">Release Notes</a></p>
+    </section>
+    
+    <!-- SCENE3 -->
+    <section id="scene2" class="h-screen flex items-center justify-center bg-neutral-light relative">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
+            
+            <!-- Left Side: Zoomed-in Excel Screenshot -->
+            <div id="scene2-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
+                <img src="./assets/window_Recurring-De4AyuFB.png" alt="Excel NTM Tab" class="max-w-lg shadow-lg rounded-lg">
+            </div>
+
+            <!-- Right Side: Feature Callout -->
+            <div class="w-full lg:w-1/2">
+                <h2 id="scene2-headline" class="text-4xl font-bold text-primary transition-all">
+                    The FUNds Forecast… is customizable
+                </h2>
+                <div id="scene2-callout" class="mt-6 text-xl transform translate-y-10">
+                    <p class="bg-white shadow-md rounded-lg p-6">
+                        Allows adaptation to fit your personal situation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SCENE4 -->
+    <section id="scene2" class="h-screen flex items-center justify-center bg-neutral-light relative">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
+            
+            <!-- Left Side: Zoomed-in Excel Screenshot -->
+            <div id="scene2-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
+                <img src="./assets/window_Balances%20_%20Actions-BO1o5T99.png" alt="Excel NTM Tab" class="max-w-lg shadow-lg rounded-lg">
+            </div>
+
+            <!-- Right Side: Feature Callout -->
+            <div class="w-full lg:w-1/2">
+                <h2 id="scene2-headline" class="text-4xl font-bold text-primary transition-all">
+                    The FUNds Forecast… is action oriented
+                </h2>
+                <div id="scene2-callout" class="mt-6 text-xl transform translate-y-10">
+                    <p class="bg-white shadow-md rounded-lg p-6">
+                        Actions matter, not visuals. We minimize distracting, redundant graphics and show you what you need.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- SCENE5 -->
+    <section id="scene2" class="h-screen flex items-center justify-center bg-neutral-light relative">
+        <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
+            
+            <!-- Left Side: Zoomed-in Excel Screenshot -->
+            <div id="scene2-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
+                <img src="./assets/window_NTM-Cgl8hPLy.png" alt="Excel NTM Tab" class="max-w-lg shadow-lg rounded-lg">
+            </div>
+
+            <!-- Right Side: Feature Callout -->
+            <div class="w-full lg:w-1/2">
+                <h2 id="scene2-headline" class="text-4xl font-bold text-primary transition-all">
+                    The FUNds Forecast… is not a b*dget
+                </h2>
+                <div id="scene2-callout" class="mt-6 text-xl transform translate-y-10">
+                    <p class="bg-white shadow-md rounded-lg p-6">
+                        We're all scared of budgeting because it means limiting yourself. Instead, gives yourself the comfort to SPEND IT WELL.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HERO2 -->
+    <section id="hero2" class="h-screen flex flex-col items-center justify-center text-center bg-white relative">
+        <h1 id="heroHeadline" class="text-6xl font-bold mb-6">SPEND IT WELL</h1>
+        <p id="heroSubHeadline" class="text-xl">Ready to get started with the FUN(ds)?</p>
+        
+        <!-- Button with Excel Icon -->
+        <button class="showModalBtn bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary-light flex items-center justify-center mx-auto space-x-3 mt-8">
+          <i class="fas fa-file-excel text-white text-xl"></i>
+          <span>Get Started</span>
+        </button>
+
+        <button id="copyLinkBtn" class="bg-gray-200 text-primary px-4 py-2 mt-10 rounded-lg shadow-md hover:bg-gray-300 flex items-center justify-center mx-auto space-x-2">
+            <i class="fas fa-copy"></i>
+            <span>Share with a friend</span>
+        </button>
+
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-primary text-white text-center">
+      <p>Website and Excel model created from scratch by Joseph M. Renner.</p> 
+      <div class="flex justify-center space-x-6 mb-2">
+          <a href="https://github.com/jrenn3" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github text-2xl hover:text-support-gold"></i>
+          </a>
+          <a href="www.linkedin.com/in/j-renner" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin text-2xl hover:text-support-gold"></i>
+          </a>
+      </div>
+      <p>&copy; 2025. All Rights Reserved. Also not financial advice.</p>
     </footer>
 
     <!-- User Input Modal -->
     <div id="userModal" class="hidden fixed inset-0 bg-neutral-dark bg-opacity-50 flex items-center justify-center">
-        <div class="bg-white rounded-lg p-6 w-full max-w-sm">
-            <h2 class="text-xl font-bold mb-4 text-primary">Enter Your Details</h2>
-            <form id="userForm">
-                <!-- Name Field -->
-                <div class="mb-4">
-                    <label for="name" class="block text-neutral-dark">Name</label>
-                    <input type="text" id="name" class="w-full px-3 py-2 border rounded" required />
-                </div>
-                <!-- Email field -->
-                <div class="mb-4">
-                    <label for="email" class="block text-neutral-dark">Email</label>
-                    <input type="email" id="email" class="w-full px-3 py-2 border rounded" required />
-                </div>
-                <!-- Source of Discovery Input -->
-                <div class="mb-4">
-                    <label for="source" class="block text-gray-700">How did you find us?</label>
-                    <textarea id="source" class="w-full px-3 py-2 border rounded" rows="3" placeholder="e.g., friend's name, Google, social media" required></textarea>
-                </div>
-                <!-- Submit button -->
-                <button type="submit" class="showModalBtn bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary-light flex items-center justify-center mx-auto space-x-3">
-                    <i class="fas fa-file-excel text-white text-xl"></i>
-                    <span>Download Excel</span>
-                </button>
-            </form>
-        </div>
+      <div class="bg-white rounded-lg p-6 w-full max-w-sm">
+          <h2 class="text-xl font-bold mb-4 text-primary">Enter Your Details</h2>
+          <form id="userForm">
+              <!-- Name Field -->
+              <div class="mb-4">
+                  <label for="name" class="block text-neutral-dark">Name</label>
+                  <input type="text" id="name" class="w-full px-3 py-2 border rounded" required />
+              </div>
+              <!-- Email field -->
+              <div class="mb-4">
+                  <label for="email" class="block text-neutral-dark">Email</label>
+                  <input type="email" id="email" class="w-full px-3 py-2 border rounded" required />
+              </div>
+              <!-- Source of Discovery Input -->
+              <div class="mb-4">
+                  <label for="source" class="block text-gray-700">How did you find us?</label>
+                  <textarea id="source" class="w-full px-3 py-2 border rounded" rows="3" placeholder="e.g., friend's name, Google, social media" required></textarea>
+              </div>
+              <!-- Submit button -->
+              <button type="submit" class="showModalBtn bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary-light flex items-center justify-center mx-auto space-x-3">
+                  <i class="fas fa-file-excel text-white text-xl"></i>
+                  <span>Download Excel</span>
+              </button>
+          </form>
+      </div>
     </div>
-    
+
 </body>
 </html>
