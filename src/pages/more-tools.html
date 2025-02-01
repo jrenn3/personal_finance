@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>More Tools</title>
+    <title>More Tools | By Moe</title>
     <link rel="icon" href="./public/favicon.png" type="image/png">
     <meta name="description" content="Track changes and updates to the FUNds Forecast model">
     <link rel="stylesheet" href="/src/styles/styles.css">
@@ -33,7 +33,7 @@
         <!-- Introduction -->
         <section class="text-center mb-12">
             <h2 class="text-3xl font-bold text-primary">More Tools</h2>
-            <p class="text-lg text-gray-700">FUNds Forecast not enough for you? You're in the </p>
+            <p class="text-lg text-gray-700">FUNds Forecast not enough for you? You're in the right place.</p>
         </section>
 
         <!-- Change Log -->
@@ -41,18 +41,12 @@
             <div class="space-y-6">
                 <!-- Version 4 -->
                 <div class="p-6 bg-white rounded-lg shadow-md">
-                    <h4 class="text-xl font-bold text-primary">Version 5.0</h4>
-                    <p class="text-gray-700 italic">Released: January 12, 2025</p>
-                    <ul class="list-disc list-inside text-gray-700 mt-4">
-                        <li>Split into TEMPLATE and EXAMPLE files</li>
-                        <li>Bolstered guidance throughout</li>
-                        <li>Support more recurrences, like every 3 months or every 90 days</li>
-                        <li>Added custom formulas to simplify some inputs</li>
-                        <li>Allow user inputs of cash redemption and average value of loyalty points inputs</li>
-                        <li>Simplified loan and credit card payments into Recurring tab</li>
-                        <li>Separated graphics into their own tab</li>
-                        <li>Removed some un-used inputs/columns</li>
-                    </ul>
+                    <h4 class="text-xl font-bold text-primary">Receipt Splitter</h4>
+                    <p class="text-gray-700">Use this template to split meals, events, and more – with the ability to allocate items directly or split evenly.</p>
+                    <button class="showModalBtn-Receipt bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary-light flex items-center justify-center mx-auto space-x-3 mt-8">
+                        <i class="fas fa-file-excel text-white text-xl"></i>
+                        <span>Download Receipt Splitter</span>
+                      </button>
                 </div>
             </div>
         </section>
@@ -71,6 +65,37 @@
         </div>
         <p>&copy; 2025. All Rights Reserved. Also not financial advice.</p>
     </footer>
+
+    <!-- User Input Modal -->
+    <div id="userModal-Receipt" class="hidden fixed inset-0 bg-neutral-dark bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 w-full max-w-sm">
+            <h2 class="text-xl font-bold mb-4 text-primary">Enter Your Details</h2>
+            <form id="userForm">
+                <!-- Name Field -->
+                <div class="mb-4">
+                    <label for="name" class="block text-neutral-dark">Name</label>
+                    <input type="text" id="name" class="w-full px-3 py-2 border rounded" required />
+                </div>
+                <!-- Email field -->
+                <div class="mb-4">
+                    <label for="email" class="block text-neutral-dark">Email</label>
+                    <input type="email" id="email" class="w-full px-3 py-2 border rounded" required />
+                </div>
+                <!-- Source of Discovery Input -->
+                <div class="mb-4">
+                    <label for="source" class="block text-gray-700">How did you find us?</label>
+                    <textarea id="source" class="w-full px-3 py-2 border rounded" rows="3" placeholder="e.g., friend's name, Google, social media" required></textarea>
+                </div>
+                <!-- Submit button -->
+                <button type="submit" class="showModalBtn bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary-light flex items-center justify-center mx-auto space-x-3">
+                    <i class="fas fa-file-excel text-white text-xl"></i>
+                    <span>Download Excel</span>
+                </button>
+            </form>
+        </div>
+      </div>
+
+      <script type="module" src="/src/main.js"></script>
 
 </body>
 </html>
