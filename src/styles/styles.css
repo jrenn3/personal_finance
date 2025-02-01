@@ -16,3 +16,8 @@
     font-weight: 400; /* Regular weight */
     font-style: normal;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+  }  
