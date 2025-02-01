@@ -55,6 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('An error occurred. Please try again.');
         });
     });
+    
+    const cancelUserModal = document.getElementById('cancelUserModal');
+
+    // Close modal when Cancel button is clicked
+    cancelUserModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    });
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -139,4 +146,12 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('An error occurred. Please try again.');
         });
     });
+
+    const cancelUserModal = document.getElementById('cancelUserModal');
+
+    // Close modal when Cancel button is clicked
+    cancelUserModal.addEventListener('click', () => {
+    modal.classList.add('hidden');
+    });
 });
+
