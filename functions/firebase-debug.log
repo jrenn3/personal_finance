@@ -1,0 +1,29 @@
+[debug] [2025-02-01T18:08:39.905Z] ----------------------------------------------------------------------
+[debug] [2025-02-01T18:08:39.907Z] Command:       C:\nvm4w\nodejs\node.exe C:\Users\josephrenner\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only functions
+[debug] [2025-02-01T18:08:39.907Z] CLI Version:   13.29.3
+[debug] [2025-02-01T18:08:39.907Z] Platform:      win32
+[debug] [2025-02-01T18:08:39.907Z] Node Version:  v22.13.1
+[debug] [2025-02-01T18:08:39.907Z] Time:          Sat Feb 01 2025 12:08:39 GMT-0600 (Central Standard Time)
+[debug] [2025-02-01T18:08:39.908Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-02-01T18:08:40.051Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-02-01T18:08:40.052Z] > authorizing via signed-in user (jrenn3@gmail.com)
+[debug] [2025-02-01T18:08:40.052Z] [iam] checking project personal-finance-tools for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]
+[debug] [2025-02-01T18:08:40.053Z] Checked if tokens are valid: true, expires at: 1738435974541
+[debug] [2025-02-01T18:08:40.053Z] Checked if tokens are valid: true, expires at: 1738435974541
+[debug] [2025-02-01T18:08:40.053Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-finance-tools:testIamPermissions [none]
+[debug] [2025-02-01T18:08:40.054Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-finance-tools:testIamPermissions x-goog-quota-user=projects/personal-finance-tools
+[debug] [2025-02-01T18:08:40.054Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-finance-tools:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-02-01T18:08:40.232Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-finance-tools:testIamPermissions 200
+[debug] [2025-02-01T18:08:40.232Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/personal-finance-tools:testIamPermissions {"permissions":["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get"]}
+[debug] [2025-02-01T18:08:40.232Z] Checked if tokens are valid: true, expires at: 1738435974541
+[debug] [2025-02-01T18:08:40.232Z] Checked if tokens are valid: true, expires at: 1738435974541
+[debug] [2025-02-01T18:08:40.232Z] >>> [apiv2][query] POST https://iam.googleapis.com/v1/projects/personal-finance-tools/serviceAccounts/personal-finance-tools@appspot.gserviceaccount.com:testIamPermissions [none]
+[debug] [2025-02-01T18:08:40.232Z] >>> [apiv2][body] POST https://iam.googleapis.com/v1/projects/personal-finance-tools/serviceAccounts/personal-finance-tools@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[debug] [2025-02-01T18:08:40.377Z] <<< [apiv2][status] POST https://iam.googleapis.com/v1/projects/personal-finance-tools/serviceAccounts/personal-finance-tools@appspot.gserviceaccount.com:testIamPermissions 200
+[debug] [2025-02-01T18:08:40.378Z] <<< [apiv2][body] POST https://iam.googleapis.com/v1/projects/personal-finance-tools/serviceAccounts/personal-finance-tools@appspot.gserviceaccount.com:testIamPermissions {"permissions":["iam.serviceAccounts.actAs"]}
+[info] 
+[info] === Deploying to 'personal-finance-tools'...
+[info] 
+[info] i  deploying functions 
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
