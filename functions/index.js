@@ -1,13 +1,13 @@
 const {onValueCreated} = require("firebase-functions/v2/database");
 const nodemailer = require("nodemailer");
 
-const myEmail = "excelbymoe@gmail.com";
+const myEmail = "jr.auto.generated.emails@gmail.com";
 
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
     user: myEmail,
-    pass: "jebkax-gerfez-4xeKwi",
+    pass: "ayfl whbs chyg zxaa",
   },
 });
 
@@ -41,11 +41,9 @@ exports.sendEmailOnDatabaseWrite = onValueCreated("/downloads/{pushId}", async (
     to: data.email,
     subject: `Enjoy your new template!`,
     text: `
-            Thank you ${data.name} for your download. If you have any questions or feedback, please don't hesitate to reach out to us at ${myEmail}.
-            Email: ${data.email}
-            Source: ${data.source}
-            Model: ${data.modelName}
-            Timestamp: ${data.timestamp}
+            Thank you ${data.name} for your ${data.modelName} download.
+            
+            If you have any questions or feedback, please don't hesitate to reach out to us at excelbymoe@gmail.com.
         `,
   };
 
