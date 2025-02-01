@@ -8,7 +8,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
-<body data-scroll-container class="bg-neutral-light text-neutral-dark"> <!--?? what does "data-scroll-container" do-->
+<body data-scroll-container class="bg-neutral-light text-neutral-dark">
 
     <!-- HEADER -->
     <header id="header" class="fixed top-0 left-0 w-full bg-white z-50 shadow-sm transition-all duration-300">
@@ -24,7 +24,7 @@
     </header>
 
     <!-- HERO -->
-    <section id="hero" class="h-screen flex flex-col items-center justify-center text-center bg-white relative">
+    <section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center bg-white relative">
         <h1 id="heroHeadline" class="text-6xl font-bold mb-6">SPEND IT WELL</h1>
         <p id="heroSubHeadline" class="text-xl">Find comfort with your cash flows using the FUNds Forecast model</p>
         
@@ -37,19 +37,21 @@
         <p class="text-xs italic mt-4" id="downloadCount">_ happy downloads</p>
     </section>
 
-    <!-- SCENE1  ?? Use javascript to render each Scene?-->
+    <!-- SCENE 1  ?? Use javascript to render each Scene?-->
     <section id="scene1" class="flex flex-col items-center justify-center bg-neutral-light my-20">
         <h2 class="text-4xl font-bold">The FUNds Forecast</h2>
         <img src="/public/images/macbook_NTM.png" alt="Excel Workbook NTM Tab" class="w-full max-w-4xl mx-4 rounded-lg">
     </section>
 
-    <!-- SCENE 2: NTM FEATURES -->
-    <section id="scene2" class="h-screen flex items-center justify-center bg-neutral-light relative">
+    <div class="w-full h-1 bg-gray-200"></div>
+
+    <!--  SCENE2: NTM FEATURES -->
+    <section id="scene2" class="min-h-screen flex items-center justify-center bg-neutral-light relative">
         <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
             
             <!-- Left Side: Zoomed-in Excel Screenshot -->
-            <div id="scene2-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
-                <img src="public/images/window_NTM.png" alt="Excel NTM Tab" class="max-w-lg shadow-lg rounded-lg">
+            <div id="scene2-image" class="lg:w-1/2 flex justify-center transform transition-all">
+                <img src="public/images/window_NTM.png" alt="Excel NTM Tab" class="w-full max-w-lg shadow-lg rounded-lg">
             </div>
 
             <!-- Right Side: Feature Callout -->
@@ -65,22 +67,24 @@
             </div>
         </div>
     </section>
+
+    <div class="w-full h-1 bg-gray-200"></div>
     
     <!-- SCENE3 -->
-    <section id="scene2" class="h-screen flex items-center justify-center bg-neutral-light relative">
+    <section id="scene3" class="min-h-screen flex items-center justify-center bg-neutral-light relative">
         <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
             
             <!-- Left Side: Zoomed-in Excel Screenshot -->
-            <div id="scene2-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
-                <img src="public/images/window_Recurring.png" alt="Excel NTM Tab" class="max-w-lg shadow-lg rounded-lg">
+            <div id="scene3-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
+                <img src="public/images/window_Recurring.png" alt="Excel NTM Tab" class="w-full max-w-lg shadow-lg rounded-lg">
             </div>
 
             <!-- Right Side: Feature Callout -->
             <div class="w-full lg:w-1/2">
-                <h2 id="scene2-headline" class="text-4xl font-bold text-primary transition-all">
+                <h2 id="scene3-headline" class="text-4xl font-bold text-primary transition-all">
                     The FUNds Forecast… is customizable
                 </h2>
-                <div id="scene2-callout" class="mt-6 text-xl transform translate-y-10">
+                <div id="scene3-callout" class="mt-6 text-xl transform translate-y-10">
                     <p class="bg-white shadow-md rounded-lg p-6">
                         Allows adaptation to fit your personal situation.
                     </p>
@@ -89,22 +93,23 @@
         </div>
     </section>
 
+    <div class="w-full h-1 bg-gray-200"></div>
 
     <!-- SCENE4 -->
-    <section id="scene2" class="h-screen flex items-center justify-center bg-neutral-light relative">
+    <section id="scene4" class="min-h-screen flex items-center justify-center bg-neutral-light relative">
         <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
             
             <!-- Left Side: Zoomed-in Excel Screenshot -->
-            <div id="scene2-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
-                <img src="public/images/window_Balances & Actions.png" alt="Excel NTM Tab" class="max-w-lg shadow-lg rounded-lg">
+            <div id="scene4-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
+                <img src="public/images/window_Balances & Actions.png" alt="Excel NTM Tab" class="w-full max-w-lg shadow-lg rounded-lg">
             </div>
 
             <!-- Right Side: Feature Callout -->
             <div class="w-full lg:w-1/2">
-                <h2 id="scene2-headline" class="text-4xl font-bold text-primary transition-all">
+                <h2 id="scene4-headline" class="text-4xl font-bold text-primary transition-all">
                     The FUNds Forecast… is action oriented
                 </h2>
-                <div id="scene2-callout" class="mt-6 text-xl transform translate-y-10">
+                <div id="scene4-callout" class="mt-6 text-xl transform translate-y-10">
                     <p class="bg-white shadow-md rounded-lg p-6">
                         Actions matter, not visuals. We minimize distracting, redundant graphics and show you what you need.
                     </p>
@@ -113,22 +118,23 @@
         </div>
     </section>
 
+    <div class="w-full h-1 bg-gray-200"></div>
 
     <!-- SCENE5 -->
-    <section id="scene2" class="h-screen flex items-center justify-center bg-neutral-light relative">
+    <section id="scene5" class="min-h-screen flex items-center justify-center bg-neutral-light relative">
         <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
             
             <!-- Left Side: Zoomed-in Excel Screenshot -->
-            <div id="scene2-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
-                <img src="public/images/window_NTM.png" alt="Excel NTM Tab" class="max-w-lg shadow-lg rounded-lg">
+            <div id="scene5-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
+                <img src="public/images/window_NTM.png" alt="Excel NTM Tab" class="w-full max-w-lg shadow-lg rounded-lg">
             </div>
 
             <!-- Right Side: Feature Callout -->
             <div class="w-full lg:w-1/2">
-                <h2 id="scene2-headline" class="text-4xl font-bold text-primary transition-all">
+                <h2 id="scene5-headline" class="text-4xl font-bold text-primary transition-all">
                     The FUNds Forecast… is not a b*dget
                 </h2>
-                <div id="scene2-callout" class="mt-6 text-xl transform translate-y-10">
+                <div id="scene5-callout" class="mt-6 text-xl transform translate-y-10">
                     <p class="bg-white shadow-md rounded-lg p-6">
                         We're all scared of budgeting because it means limiting yourself. Instead, gives yourself the comfort to SPEND IT WELL.
                     </p>
@@ -138,7 +144,7 @@
     </section>
 
     <!-- HERO2 -->
-    <section id="hero2" class="h-screen flex flex-col items-center justify-center text-center bg-white relative">
+    <section id="hero2" class="min-h-screen flex flex-col items-center justify-center text-center bg-white relative">
         <h1 id="heroHeadline" class="text-6xl font-bold mb-6">SPEND IT WELL</h1>
         <p id="heroSubHeadline" class="text-xl">Ready to get started with the FUN(ds)?</p>
         
@@ -156,7 +162,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-4 bg-primary text-white text-center">
+    <footer class="py-4 bg-primary text-white text-center w-full">
       <p>Website and Excel model created from scratch by Joseph M. Renner.</p> 
       <div class="flex justify-center space-x-6 mb-2">
           <a href="https://github.com/jrenn3" target="_blank" aria-label="GitHub">
