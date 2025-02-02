@@ -1,10 +1,5 @@
 .DS_Store
 public/.DS_Store
-node_modules/.DS_Store
 dist/.DS_Store
-node_modules/@firebase/auth/.DS_Store
-node_modules/firebase/.DS_Store
-node_modules/.DS_Store
-node_modules/jiti/.DS_Store
-node_modules/yaml/.DS_Store
+node_modules/
 public/.DS_Store
