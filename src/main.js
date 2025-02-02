@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.download;
             link.click();
 
-            alert("Thank you! Your model should download now.\n\nWe will let you know via email when there are version updates to the model.");
+            showDownloadPopup();
         })
         .catch((error) => {
             console.error('Error saving data:', error);
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close modal when Cancel button is clicked
     cancelUserModal.addEventListener('click', () => {
-    modal.classList.add('hidden');
+        modal.classList.add('hidden');
     });
 });
 
@@ -139,7 +139,8 @@ document.addEventListener('DOMContentLoaded', () => {
             link.download;
             link.click();
 
-            setTimeout(showDownloadPopup, 500);
+            showDownloadPopup();
+
         })
         .catch((error) => {
             console.error('Error saving data:', error);
@@ -151,19 +152,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Close modal when Cancel button is clicked
     cancelUserModal.addEventListener('click', () => {
-    modal.classList.add('hidden');
+        modal.classList.add('hidden');  
     });
 });
 
 function showDownloadPopup() {
     const popup = document.getElementById("downloadPopup");
-    popup.classList.remove("hidden", "opacity-0", "scale-95");
-    popup.classList.add("opacity-100", "scale-100");
+    popup.classList.remove("hidden");
 
-    // Automatically hide after 5 seconds
-    setTimeout(() => {
-        closePopup();
-    }, 5000);
+    const closeDownloadPopup = document.getElementById('closeDownloadPopup');
+
+    closeDownloadPopup.addEventListener('click', () => {
+        popup.classList.add('hidden');  
+    });
 }
 
 function closePopup() {
