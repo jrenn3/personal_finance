@@ -6,7 +6,7 @@
     <title>FUNds | By Moe</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-  <script type="module" crossorigin src="./assets/main-Dji2TubE.js"></script>
+  <script type="module" crossorigin src="./assets/main-BrMshODa.js"></script>
   <link rel="stylesheet" crossorigin href="./assets/styles-CSA84chR.css">
 </head>
 <body data-scroll-container class="bg-neutral-light text-neutral-dark">
@@ -25,7 +25,7 @@
         </div>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO1 -->
     <section id="hero" class="min-h-screen flex flex-col items-center justify-center text-center bg-white relative">
         <h1 id="heroHeadline" class="text-6xl font-bold mb-6 mx-4">SPEND IT WELL</h1>
         <p id="heroSubHeadline" class="text-xl mx-4">Find comfort with your cash flows using the FUNds Forecast model</p>
@@ -39,7 +39,7 @@
         <p class="text-xs italic mt-4" id="downloadCount">_ happy downloads</p>
     </section>
 
-    <!-- SCENE 1  ?? Use javascript to render each Scene?-->
+    <!-- SCENE1 -->
     <section id="scene1" class="flex flex-col items-center justify-center bg-neutral-light mt-20">
         <h2 class="text-4xl font-bold">The FUNds Forecast</h2>
         <img src="./assets/macbook_NTM-DZKWvsJO.png" alt="Excel Workbook NTM Tab" class="w-full max-w-4xl mx-4 rounded-lg">
@@ -170,7 +170,7 @@
     </footer>
 
     <!-- User Input Modal -->
-    <div id="userModal" class="hidden fixed inset-0 bg-neutral-dark bg-opacity-50 flex items-center justify-center">
+    <div id="userModal" class="modal hidden fixed inset-0 bg-neutral-dark bg-opacity-50 flex items-center justify-center"> <!-- TBD do i need the id anymore-->
         <div class="bg-white rounded-lg p-6 w-full max-w-sm">
             <h2 class="text-xl font-bold mb-4 text-primary">Enter Your Details</h2>
             <form id="userForm">
@@ -196,7 +196,7 @@
                         <span>Download Excel</span>
                     </button>
                     <!-- Cancel Button -->
-                    <button type="button" id="cancelUserModal" class="text-gray-500 hover:text-gray-700">
+                    <button type="button" class="closePopUp text-gray-500 hover:text-gray-700">
                         Cancel
                     </button>
                 </div>
@@ -211,7 +211,7 @@
             <br>
             <p>We will let you know via email when there are version updates to the model.</p>
             <br>
-            <button type="button" id="closeDownloadPopup" class="text-gray-500 hover:text-gray-700">
+            <button type="button" class="closePopUp text-gray-500 hover:text-gray-700">
                 Close
             </button>
         </div>

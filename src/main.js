@@ -3,117 +3,77 @@ import './styles/styles.css'; //ensures Vite bundles Tailwind CSS styles
 import database from './firebase';
 import { ref, push, onValue } from 'firebase/database';
 
-// FUNds Forecast Model download modal
 document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('userModal');
-    const form = document.getElementById('userForm');
-    const showModalBtns = document.querySelectorAll('.showModalBtn');
+    // Combine modal and form elements
+    const modals = {
+        funds: {
+            modal: document.getElementById('userModal'),
+            form: document.getElementById('userForm'),
+            modelURL: '/personal_finance/files/FUNdsForecastModel_v5.zip',
+            showModalBtns: document.querySelectorAll('.showModalBtn')
+        },
+        receipt: {
+            modal: document.getElementById('userModal-Receipt'),
+            form: document.getElementById('userForm-Receipt'),
+            modelURL: '/personal_finance/files/TEMPLATE_ReceiptSplitter_ByMoe_v5.xlsx',
+            showModalBtns: document.querySelectorAll('.showModalBtn-Receipt')
+        }
+    };
 
-    const modelURL =  '/personal_finance/files/FUNdsForecastModel_v5.zip'; // Path to your spreadsheet
-    const modelName = modelURL.split('/').pop();
-
-    // Iterate over all buttons and add event listeners
-    showModalBtns.forEach((button) => {
-        button.addEventListener('click', () => {
-
-            // Open the modal
-            modal.classList.remove('hidden');
+    // Iterate over modals and add event listeners
+    Object.values(modals).forEach(({ modal, form, modelURL, showModalBtns }) => {
+        showModalBtns.forEach((button) => {
+            button.addEventListener('click', () => {
+                toggleModal(modal, true);
+                console.log('modal open')} //TESTING
+            );
         });
+        handleFormSubmission(form, modelURL);
     });
-
-
-    // Handle form submission
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const source = document.getElementById('source').value;
-        const timestamp = new Date().toISOString();
-
-        // Save user details to Firebase
-        push(ref(database, 'downloads/'), {
-            name,
-            email,
-            modelName,
-            source,
-            timestamp,
-        })
-        .then(() => {
-            modal.classList.add('hidden'); // Hide the modal
-            
-            // Trigger the file download programmatically
-            const link = document.createElement('a');
-            link.href = modelURL;
-            link.download;
-            link.click();
-
-            showDownloadPopup();
-        })
-        .catch((error) => {
-            console.error('Error saving data:', error);
-            alert('An error occurred. Please try again.');
-        });
-    });
-    
-    const cancelUserModal = document.getElementById('cancelUserModal');
 
     // Close modal when Cancel button is clicked
-    cancelUserModal.addEventListener('click', () => {
-        modal.classList.add('hidden');
+    document.querySelectorAll('.closePopUp').forEach((button) => {
+        console.log('popup close found');
+        button.addEventListener('click', () => {
+            toggleModal(button.closest('.modal'), false);
+            console.log('Modal closed'); //TESTING
+        });
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+    // Handle download count
     const downloadCountElement = document.getElementById('downloadCount');
     const downloadsRef = ref(database, 'downloads');
 
-    // Listen for changes to the downloads node
     onValue(downloadsRef, (snapshot) => {
         const totalDownloads = snapshot.exists() ? snapshot.size : 0; // Get the count of child nodes
-        downloadCountElement.textContent = `${totalDownloads} happy downloads`; // Update the count with text
+        console.log(totalDownloads);
+        downloadCountElement.textContent = `12 happy downloads`; // TEST
+        // downloadCountElement.textContent = `${totalDownloads} happy downloads`; // Update the count with text
     });
-});
 
-document.addEventListener('DOMContentLoaded', () => {
+    // Handle copy link button
     const copyLinkBtn = document.getElementById('copyLinkBtn');
-    
     copyLinkBtn.addEventListener('click', () => {
-        // The URL to copy (can be the current page URL or a specific one)
         const urlToCopy = window.location.href;
 
-        // Use the Clipboard API to copy the URL
         navigator.clipboard.writeText(urlToCopy)
-            .then(() => {
-                // Notify the user that the link has been copied
-                alert('Link copied to clipboard!');
-            })
-            .catch((err) => {
-                console.error('Failed to copy link: ', err);
-            });
+            .then(() => alert('Link copied to clipboard!'))
+            .catch((err) => console.error('Failed to copy link: ', err));
+    });
+
+    // Example: Trigger when file is downloaded
+    document.getElementById("downloadButton").addEventListener("click", function () {
+        setTimeout(showDownloadPopup, 500);
     });
 });
 
-// Receipt Splitter download modal
-document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('userModal-Receipt');
-    const form = document.getElementById('userForm-Receipt');
-    const showModalBtns = document.querySelectorAll('.showModalBtn-Receipt');
+// Function to handle modal visibility
+function toggleModal(modal, show) {
+    modal.classList.toggle('hidden', !show);
+}
 
-    const modelURL =  '/personal_finance/files/TEMPLATE_ReceiptSplitter_ByMoe_v5.xlsx'; // Path to your spreadsheet
-    const modelName = modelURL.split('/').pop();
-
-    // Iterate over all buttons and add event listeners
-    showModalBtns.forEach((button) => {
-        button.addEventListener('click', () => {
-
-            // Open the modal
-            modal.classList.remove('hidden');
-        });
-    });
-
-
-    // Handle form submission
+// Function to handle form submission
+function handleFormSubmission(form, modelURL) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
@@ -121,6 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const email = document.getElementById('email').value;
         const source = document.getElementById('source').value;
         const timestamp = new Date().toISOString();
+        const modelName = modelURL.split('/').pop();
 
         // Save user details to Firebase
         push(ref(database, 'downloads/'), {
@@ -131,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             timestamp,
         })
         .then(() => {
-            modal.classList.add('hidden'); // Hide the modal
+            toggleModal(form.closest('.modal'), false); // Hide the modal
             
             // Trigger the file download programmatically
             const link = document.createElement('a');
@@ -140,28 +101,19 @@ document.addEventListener('DOMContentLoaded', () => {
             link.click();
 
             showDownloadPopup();
-
         })
         .catch((error) => {
             console.error('Error saving data:', error);
-            alert('An error occurred. Please try again.');
+            alert('An error occurred.');
         });
     });
-
-    const cancelUserModal = document.getElementById('cancelUserModal');
-
-    // Close modal when Cancel button is clicked
-    cancelUserModal.addEventListener('click', () => {
-        modal.classList.add('hidden');  
-    });
-});
+}
 
 function showDownloadPopup() {
     const popup = document.getElementById("downloadPopup");
     popup.classList.remove("hidden");
 
     const closeDownloadPopup = document.getElementById('closeDownloadPopup');
-
     closeDownloadPopup.addEventListener('click', () => {
         popup.classList.add('hidden');  
     });
@@ -172,9 +124,3 @@ function closePopup() {
     popup.classList.add("opacity-0", "scale-95");
     setTimeout(() => popup.classList.add("hidden"), 300);
 }
-
-// Example: Trigger when file is downloaded
-document.getElementById("downloadButton").addEventListener("click", function () {
-    // Simulate a download action (replace with actual download logic)
-    setTimeout(showDownloadPopup, 500);
-});
