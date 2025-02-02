@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
             link.download;
             link.click();
 
-            alert("Thank you! Your model should download now.\n\nWe will let you know via email when there are version updates to the model.");
+            setTimeout(showDownloadPopup, 500);
         })
         .catch((error) => {
             console.error('Error saving data:', error);
@@ -155,3 +155,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+function showDownloadPopup() {
+    const popup = document.getElementById("downloadPopup");
+    popup.classList.remove("hidden", "opacity-0", "scale-95");
+    popup.classList.add("opacity-100", "scale-100");
+
+    // Automatically hide after 5 seconds
+    setTimeout(() => {
+        closePopup();
+    }, 5000);
+}
+
+function closePopup() {
+    const popup = document.getElementById("downloadPopup");
+    popup.classList.add("opacity-0", "scale-95");
+    setTimeout(() => popup.classList.add("hidden"), 300);
+}
+
+// Example: Trigger when file is downloaded
+document.getElementById("downloadButton").addEventListener("click", function () {
+    // Simulate a download action (replace with actual download logic)
+    setTimeout(showDownloadPopup, 500);
+});
