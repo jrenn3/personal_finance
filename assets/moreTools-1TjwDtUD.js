@@ -1,1 +1,0 @@
-import{s as t,a as s}from"./common-CqN0fSjw.js";/* empty css               */document.addEventListener("DOMContentLoaded",()=>{const e="/personal_finance/files/TEMPLATE_ReceiptSplitter_ByMoe_v5.xlsx",o=document.querySelectorAll(".showModalBtn-Receipt");t(o,"userModal-Receipt"),s("userModal-Receipt","userForm-Receipt",e)});
