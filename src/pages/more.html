@@ -88,7 +88,7 @@
                 </div>
                 <div class="flex justify-between">
                     <!-- Submit button -->
-                    <button type="submit" class="showModalBtn bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary-light flex items-center justify-center mx-auto space-x-3">
+                    <button type="submit" class="downloadButton bg-primary text-white px-6 py-3 rounded-lg shadow-md hover:bg-primary-light flex items-center justify-center mx-auto space-x-3">
                         <i class="fas fa-file-excel text-white text-xl"></i>
                         <span>Download Excel</span>
                     </button>
@@ -99,9 +99,23 @@
                 </div>
             </form>
         </div>
-      </div>
+    </div>
 
-      <script type="module" src="/src/main.js"></script>
+
+    <!-- Custom File Download Popup -->
+    <div id="downloadPopup" class="hidden fixed inset-0 bg-neutral-dark bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-6 w-full max-w-sm">
+            <p>Thank you! Your model should download now.</p>
+            <br>
+            <p>We will let you know via email when there are version updates to the model.</p>
+            <br>
+            <button type="button" id="closeDownloadPopup" class="text-gray-500 hover:text-gray-700">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script type="module" src="../more.js"></script>
 
 </body>
 </html>
