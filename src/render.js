@@ -74,19 +74,30 @@ function renderUserInputModal() {
     `;
 }
 
-function renderDownloadConfirmationPopup() {
+// Function to render a scene
+function renderScene(id, headline, subHeadline, imgSrc, imgAlt, calloutText) {
     return `
-        <div id="downloadPopup" class="hidden fixed inset-0 bg-neutral-dark bg-opacity-50 flex items-center justify-center">
-            <div class="bg-white rounded-lg p-6 w-full max-w-sm">
-                <p>Thank you! Your model should download now.</p>
-                <br>
-                <p>We will let you know via email when there are version updates to the model.</p>
-                <br>
-                <button type="button" id="closeDownloadPopup" class="text-gray-500 hover:text-gray-700">
-                    Close
-                </button>
+        <section id="${id}" class="min-h-screen flex items-center justify-center bg-neutral-light relative mt-20">
+            <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
+                
+                <!-- Left Side: Zoomed-in Excel Screenshot -->
+                <div id="${id}-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
+                    <img src="${imgSrc}" alt="${imgAlt}" class="w-full max-w-lg shadow-lg rounded-lg">
+                </div>
+
+                <!-- Right Side: Feature Callout -->
+                <div class="w-full lg:w-1/2">
+                    <h2 id="${id}-headline" class="text-4xl font-bold text-primary transition-all lg:ml-6">
+                        ${headline}
+                    </h2>
+                    <div id="${id}-callout" class="my-6 text-xl transform md:translate-y-10">
+                        <p class="bg-white shadow-md rounded-lg p-6 lg:ml-6">
+                            ${calloutText}
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
     `;
 }
 
@@ -95,7 +106,47 @@ function renderComponents() {
     document.body.insertAdjacentHTML('afterbegin', renderHeader());
     document.body.insertAdjacentHTML('beforeend', renderFooter());
     document.body.insertAdjacentHTML('beforeend', renderUserInputModal());
-    document.body.insertAdjacentHTML('beforeend', renderDownloadConfirmationPopup());
+
+    // Render scenes
+    const scenes = [
+        {
+            id: 'scene2',
+            headline: 'The FUNds Forecast is... future focused',
+            subHeadline: '',
+            imgSrc: 'public/images/window_NTM.png',
+            imgAlt: 'Excel NTM Tab',
+            calloutText: 'Sick of logging past transactions? Don’t. Review where you want to go, not where you’ve been.'
+        },
+        {
+            id: 'scene3',
+            headline: 'The FUNds Forecast is... customizable',
+            subHeadline: '',
+            imgSrc: 'public/images/window_Recurring.png',
+            imgAlt: 'Excel NTM Tab',
+            calloutText: 'Allows adaptation to fit your personal situation.'
+        },
+        {
+            id: 'scene4',
+            headline: 'The FUNds Forecast is... action oriented',
+            subHeadline: '',
+            imgSrc: 'public/images/window_Balances & Actions.png',
+            imgAlt: 'Excel NTM Tab',
+            calloutText: 'Actions matter, not visuals. We minimize distracting, redundant graphics and show you what you need.'
+        },
+        {
+            id: 'scene5',
+            headline: 'The FUNds Forecast is... not a b*dget',
+            subHeadline: '',
+            imgSrc: 'public/images/window_NTM.png',
+            imgAlt: 'Excel NTM Tab',
+            calloutText: 'We\'re all scared of budgeting because it means limiting yourself. Instead, give yourself the comfort to SPEND IT WELL.'
+        }
+    ];
+
+    const scene1 = document.getElementById('scene1');
+    scenes.forEach(scene => {
+        scene1.insertAdjacentHTML('afterend', renderScene(scene.id, scene.headline, scene.subHeadline, scene.imgSrc, scene.imgAlt, scene.calloutText));
+    });
 }
 
 // Call the function to render components
