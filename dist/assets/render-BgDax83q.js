@@ -1,4 +1,4 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))l(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const n of t.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&l(n)}).observe(document,{childList:!0,subtree:!0});function a(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function l(e){if(e.ep)return;e.ep=!0;const t=a(e);fetch(e.href,t)}})();const o=""+new URL("window_NTM-Cgl8hPLy.png",import.meta.url).href,s=""+new URL("window_Recurring-De4AyuFB.png",import.meta.url).href,d=""+new URL("window_Balances _ Actions-BO1o5T99.png",import.meta.url).href;function c(){const r=window.location.pathname,i=r.includes("index.html")?"#":"../../index.html",a=r.includes("more.html")?"#":"../../src/pages/more.html",l=r.includes("release-notes.html")?"#":"../../src/pages/release-notes.html";return`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))n(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const l of t.addedNodes)l.tagName==="LINK"&&l.rel==="modulepreload"&&n(l)}).observe(document,{childList:!0,subtree:!0});function a(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function n(e){if(e.ep)return;e.ep=!0;const t=a(e);fetch(e.href,t)}})();const o=""+new URL("window_NTM-Cgl8hPLy.png",import.meta.url).href,s=""+new URL("window_Recurring-De4AyuFB.png",import.meta.url).href,d=""+new URL("window_Balances _ Actions-BO1o5T99.png",import.meta.url).href;function c(){const r=window.location.pathname,i=r.includes("index.html")?"#":"/personal_finance/index.html",a=r.includes("more.html")?"#":"/personal_finance/src/pages/more.html",n=r.includes("release-notes.html")?"#":"/personal_finance/src/pages/release-notes.html";return`
         <header id="header" class="fixed top-0 left-0 w-full bg-white z-50 shadow-sm transition-all duration-300">
             <div class="container mx-auto flex justify-center items-center px-6 py-4">
                 <div class="logo mr-auto">
@@ -8,7 +8,7 @@
                 <nav class="md:flex space-x-8">
                     <a href="${i}" class="text-neutral-dark hover:text-primary">Home</a>
                     <a href="${a}" class="text-neutral-dark hover:text-primary">More</a>
-                    <a href="${l}" class="text-neutral-dark hover:text-primary">Release Notes</a>
+                    <a href="${n}" class="text-neutral-dark hover:text-primary">Release Notes</a>
                 </nav>
             </div>
         </header>
@@ -59,13 +59,13 @@
                 </form>
             </div>
         </div>
-    `}function f(r,i,a,l,e,t){return`
+    `}function f(r,i,a,n,e,t){return`
         <section id="${r}" class="min-h-screen flex items-center justify-center bg-neutral-light relative mt-20">
             <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
                 
                 <!-- Left Side: Zoomed-in Excel Screenshot -->
                 <div id="${r}-image" class="w-full lg:w-1/2 flex justify-center transform transition-all">
-                    <img src="${l}" alt="${e}" class="w-full max-w-lg shadow-lg rounded-lg">
+                    <img src="${n}" alt="${e}" class="w-full max-w-lg shadow-lg rounded-lg">
                 </div>
 
                 <!-- Right Side: Feature Callout -->
@@ -81,4 +81,4 @@
                 </div>
             </div>
         </section>
-    `}function g(){document.body.insertAdjacentHTML("afterbegin",c()),document.body.insertAdjacentHTML("beforeend",u()),document.body.insertAdjacentHTML("beforeend",m());const r=[{id:"scene2",headline:"The FUNds Forecast is... future focused",subHeadline:"",imgSrc:o,imgAlt:"Excel NTM Tab",calloutText:"Sick of logging past transactions? Don’t. Review where you want to go, not where you’ve been."},{id:"scene3",headline:"The FUNds Forecast is... customizable",subHeadline:"",imgSrc:s,imgAlt:"Excel NTM Tab",calloutText:"Allows adaptation to fit your personal situation."},{id:"scene4",headline:"The FUNds Forecast is... action oriented",subHeadline:"",imgSrc:d,imgAlt:"Excel NTM Tab",calloutText:"Actions matter, not visuals. We minimize distracting, redundant graphics and show you what you need."},{id:"scene5",headline:"The FUNds Forecast is... not a b*dget",subHeadline:"",imgSrc:o,imgAlt:"Excel NTM Tab",calloutText:"We're all scared of budgeting because it means limiting yourself. Instead, give yourself the comfort to SPEND IT WELL."}],i=document.getElementById("scene1");r.forEach(a=>{i.insertAdjacentHTML("afterend",f(a.id,a.headline,a.subHeadline,a.imgSrc,a.imgAlt,a.calloutText))})}g();
+    `}function p(){document.body.insertAdjacentHTML("afterbegin",c()),document.body.insertAdjacentHTML("beforeend",u()),document.body.insertAdjacentHTML("beforeend",m());const r=[{id:"scene2",headline:"The FUNds Forecast is... future focused",subHeadline:"",imgSrc:o,imgAlt:"Excel NTM Tab",calloutText:"Sick of logging past transactions? Don’t. Review where you want to go, not where you’ve been."},{id:"scene3",headline:"The FUNds Forecast is... customizable",subHeadline:"",imgSrc:s,imgAlt:"Excel NTM Tab",calloutText:"Allows adaptation to fit your personal situation."},{id:"scene4",headline:"The FUNds Forecast is... action oriented",subHeadline:"",imgSrc:d,imgAlt:"Excel NTM Tab",calloutText:"Actions matter, not visuals. We minimize distracting, redundant graphics and show you what you need."},{id:"scene5",headline:"The FUNds Forecast is... not a b*dget",subHeadline:"",imgSrc:o,imgAlt:"Excel NTM Tab",calloutText:"We're all scared of budgeting because it means limiting yourself. Instead, give yourself the comfort to SPEND IT WELL."}],i=document.getElementById("scene1");r.forEach(a=>{i.insertAdjacentHTML("afterend",f(a.id,a.headline,a.subHeadline,a.imgSrc,a.imgAlt,a.calloutText))})}p();

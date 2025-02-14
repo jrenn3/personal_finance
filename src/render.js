@@ -7,9 +7,9 @@ import windowBalancesActions from '../public/images/window_Balances & Actions.pn
 function renderHeader() {
     const currentPage = window.location.pathname;
 
-    const homeLink = currentPage.includes('index.html') ? '#' : '../../index.html';
-    const moreLink = currentPage.includes('more.html') ? '#' : '../../src/pages/more.html';
-    const releaseNotesLink = currentPage.includes('release-notes.html') ? '#' : '../../src/pages/release-notes.html';
+    const homeLink = currentPage.includes('index.html') ? '#' : '/personal_finance/index.html';
+    const moreLink = currentPage.includes('more.html') ? '#' : '/personal_finance/src/pages/more.html';
+    const releaseNotesLink = currentPage.includes('release-notes.html') ? '#' : '/personal_finance/src/pages/release-notes.html';
 
     return `
         <header id="header" class="fixed top-0 left-0 w-full bg-white z-50 shadow-sm transition-all duration-300">
