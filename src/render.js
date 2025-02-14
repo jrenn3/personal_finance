@@ -1,5 +1,16 @@
+// Import images
+import windowNTM from '../public/images/window_NTM.png';
+import windowRecurring from '../public/images/window_Recurring.png';
+import windowBalancesActions from '../public/images/window_Balances & Actions.png';
+
 // Function to render the header
 function renderHeader() {
+    const currentPage = window.location.pathname;
+
+    const homeLink = currentPage.includes('index.html') ? '#' : '../../index.html';
+    const moreLink = currentPage.includes('more.html') ? '#' : '../../src/pages/more.html';
+    const releaseNotesLink = currentPage.includes('release-notes.html') ? '#' : '../../src/pages/release-notes.html';
+
     return `
         <header id="header" class="fixed top-0 left-0 w-full bg-white z-50 shadow-sm transition-all duration-300">
             <div class="container mx-auto flex justify-center items-center px-6 py-4">
@@ -8,9 +19,9 @@ function renderHeader() {
                 </div> 
                 <!-- Navigation Menu -->
                 <nav class="md:flex space-x-8">
-                    <a href="../../index.html" class="text-neutral-dark hover:text-primary">Home</a>
-                    <a href="../../src/pages/more.html" class="text-neutral-dark hover:text-primary">More</a>
-                    <a href="../../src/pages/release-notes.html" class="text-neutral-dark hover:text-primary">Release Notes</a>
+                    <a href="${homeLink}" class="text-neutral-dark hover:text-primary">Home</a>
+                    <a href="${moreLink}" class="text-neutral-dark hover:text-primary">More</a>
+                    <a href="${releaseNotesLink}" class="text-neutral-dark hover:text-primary">Release Notes</a>
                 </nav>
             </div>
         </header>
@@ -113,7 +124,7 @@ function renderComponents() {
             id: 'scene2',
             headline: 'The FUNds Forecast is... future focused',
             subHeadline: '',
-            imgSrc: 'public/images/window_NTM.png',
+            imgSrc: windowNTM,
             imgAlt: 'Excel NTM Tab',
             calloutText: 'Sick of logging past transactions? Don’t. Review where you want to go, not where you’ve been.'
         },
@@ -121,7 +132,7 @@ function renderComponents() {
             id: 'scene3',
             headline: 'The FUNds Forecast is... customizable',
             subHeadline: '',
-            imgSrc: 'public/images/window_Recurring.png',
+            imgSrc: windowRecurring,
             imgAlt: 'Excel NTM Tab',
             calloutText: 'Allows adaptation to fit your personal situation.'
         },
@@ -129,7 +140,7 @@ function renderComponents() {
             id: 'scene4',
             headline: 'The FUNds Forecast is... action oriented',
             subHeadline: '',
-            imgSrc: 'public/images/window_Balances & Actions.png',
+            imgSrc: windowBalancesActions,
             imgAlt: 'Excel NTM Tab',
             calloutText: 'Actions matter, not visuals. We minimize distracting, redundant graphics and show you what you need.'
         },
@@ -137,7 +148,7 @@ function renderComponents() {
             id: 'scene5',
             headline: 'The FUNds Forecast is... not a b*dget',
             subHeadline: '',
-            imgSrc: 'public/images/window_NTM.png',
+            imgSrc: windowNTM,
             imgAlt: 'Excel NTM Tab',
             calloutText: 'We\'re all scared of budgeting because it means limiting yourself. Instead, give yourself the comfort to SPEND IT WELL.'
         }

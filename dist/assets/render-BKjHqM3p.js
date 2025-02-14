@@ -1,4 +1,4 @@
-(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))l(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const s of t.addedNodes)s.tagName==="LINK"&&s.rel==="modulepreload"&&l(s)}).observe(document,{childList:!0,subtree:!0});function a(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function l(e){if(e.ep)return;e.ep=!0;const t=a(e);fetch(e.href,t)}})();function n(){return`
+(function(){const i=document.createElement("link").relList;if(i&&i.supports&&i.supports("modulepreload"))return;for(const e of document.querySelectorAll('link[rel="modulepreload"]'))l(e);new MutationObserver(e=>{for(const t of e)if(t.type==="childList")for(const n of t.addedNodes)n.tagName==="LINK"&&n.rel==="modulepreload"&&l(n)}).observe(document,{childList:!0,subtree:!0});function a(e){const t={};return e.integrity&&(t.integrity=e.integrity),e.referrerPolicy&&(t.referrerPolicy=e.referrerPolicy),e.crossOrigin==="use-credentials"?t.credentials="include":e.crossOrigin==="anonymous"?t.credentials="omit":t.credentials="same-origin",t}function l(e){if(e.ep)return;e.ep=!0;const t=a(e);fetch(e.href,t)}})();const o=""+new URL("window_NTM-Cgl8hPLy.png",import.meta.url).href,s=""+new URL("window_Recurring-De4AyuFB.png",import.meta.url).href,d=""+new URL("window_Balances _ Actions-BO1o5T99.png",import.meta.url).href;function c(){const r=window.location.pathname,i=r.includes("index.html")?"#":"../../index.html",a=r.includes("more.html")?"#":"../../src/pages/more.html",l=r.includes("release-notes.html")?"#":"../../src/pages/release-notes.html";return`
         <header id="header" class="fixed top-0 left-0 w-full bg-white z-50 shadow-sm transition-all duration-300">
             <div class="container mx-auto flex justify-center items-center px-6 py-4">
                 <div class="logo mr-auto">
@@ -6,13 +6,13 @@
                 </div> 
                 <!-- Navigation Menu -->
                 <nav class="md:flex space-x-8">
-                    <a href="../../index.html" class="text-neutral-dark hover:text-primary">Home</a>
-                    <a href="../../src/pages/more.html" class="text-neutral-dark hover:text-primary">More</a>
-                    <a href="../../src/pages/release-notes.html" class="text-neutral-dark hover:text-primary">Release Notes</a>
+                    <a href="${i}" class="text-neutral-dark hover:text-primary">Home</a>
+                    <a href="${a}" class="text-neutral-dark hover:text-primary">More</a>
+                    <a href="${l}" class="text-neutral-dark hover:text-primary">Release Notes</a>
                 </nav>
             </div>
         </header>
-    `}function o(){return`
+    `}function u(){return`
         <footer class="py-4 bg-primary text-white text-center">
             <p>Website and Excel model created from scratch by Joseph M. Renner.</p> 
             <div class="flex justify-center space-x-6 mb-2">
@@ -25,7 +25,7 @@
             </div>
             <p>&copy; 2025 By Moe. All Rights Reserved. Not financial advice.</p>
         </footer>
-    `}function d(){return`
+    `}function m(){return`
         <div id="userModal" class="hidden fixed inset-0 bg-neutral-dark bg-opacity-50 flex items-center justify-center">
             <div class="bg-white rounded-lg p-6 w-full max-w-sm">
                 <h2 class="text-xl font-bold mb-4 text-primary">Enter Your Details</h2>
@@ -59,7 +59,7 @@
                 </form>
             </div>
         </div>
-    `}function c(r,i,a,l,e,t){return`
+    `}function f(r,i,a,l,e,t){return`
         <section id="${r}" class="min-h-screen flex items-center justify-center bg-neutral-light relative mt-20">
             <div class="container mx-auto flex flex-col lg:flex-row items-center px-8 space-y-12 lg:space-y-0">
                 
@@ -81,4 +81,4 @@
                 </div>
             </div>
         </section>
-    `}function u(){document.body.insertAdjacentHTML("afterbegin",n()),document.body.insertAdjacentHTML("beforeend",o()),document.body.insertAdjacentHTML("beforeend",d());const r=[{id:"scene2",headline:"The FUNds Forecast is... future focused",subHeadline:"",imgSrc:"public/images/window_NTM.png",imgAlt:"Excel NTM Tab",calloutText:"Sick of logging past transactions? Don’t. Review where you want to go, not where you’ve been."},{id:"scene3",headline:"The FUNds Forecast is... customizable",subHeadline:"",imgSrc:"public/images/window_Recurring.png",imgAlt:"Excel NTM Tab",calloutText:"Allows adaptation to fit your personal situation."},{id:"scene4",headline:"The FUNds Forecast is... action oriented",subHeadline:"",imgSrc:"public/images/window_Balances & Actions.png",imgAlt:"Excel NTM Tab",calloutText:"Actions matter, not visuals. We minimize distracting, redundant graphics and show you what you need."},{id:"scene5",headline:"The FUNds Forecast is... not a b*dget",subHeadline:"",imgSrc:"public/images/window_NTM.png",imgAlt:"Excel NTM Tab",calloutText:"We're all scared of budgeting because it means limiting yourself. Instead, give yourself the comfort to SPEND IT WELL."}],i=document.getElementById("scene1");r.forEach(a=>{i.insertAdjacentHTML("afterend",c(a.id,a.headline,a.subHeadline,a.imgSrc,a.imgAlt,a.calloutText))})}u();
+    `}function g(){document.body.insertAdjacentHTML("afterbegin",c()),document.body.insertAdjacentHTML("beforeend",u()),document.body.insertAdjacentHTML("beforeend",m());const r=[{id:"scene2",headline:"The FUNds Forecast is... future focused",subHeadline:"",imgSrc:o,imgAlt:"Excel NTM Tab",calloutText:"Sick of logging past transactions? Don’t. Review where you want to go, not where you’ve been."},{id:"scene3",headline:"The FUNds Forecast is... customizable",subHeadline:"",imgSrc:s,imgAlt:"Excel NTM Tab",calloutText:"Allows adaptation to fit your personal situation."},{id:"scene4",headline:"The FUNds Forecast is... action oriented",subHeadline:"",imgSrc:d,imgAlt:"Excel NTM Tab",calloutText:"Actions matter, not visuals. We minimize distracting, redundant graphics and show you what you need."},{id:"scene5",headline:"The FUNds Forecast is... not a b*dget",subHeadline:"",imgSrc:o,imgAlt:"Excel NTM Tab",calloutText:"We're all scared of budgeting because it means limiting yourself. Instead, give yourself the comfort to SPEND IT WELL."}],i=document.getElementById("scene1");r.forEach(a=>{i.insertAdjacentHTML("afterend",f(a.id,a.headline,a.subHeadline,a.imgSrc,a.imgAlt,a.calloutText))})}g();
