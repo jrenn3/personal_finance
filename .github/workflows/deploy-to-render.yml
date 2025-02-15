@@ -40,6 +40,15 @@ jobs:
         else
           git checkout -b deploy-to-render
         fi
-        git add dist
-        git commit -m 'Deploy to Render'
-        git push origin deploy-to-render --force
+        
+        # Remove all files except .git to keep branch clean
+        git rm -rf . 
+
+        # Copy only dist files into the branch
+        cp -r ../dist/* .
+        rm -rf ../dist  # Clean up moved dist folder
+
+        # Commit and force push the latest build
+        git add .
+        git commit -m "Deploy built files to Render"
+        git push --force origin deploy-to-render
