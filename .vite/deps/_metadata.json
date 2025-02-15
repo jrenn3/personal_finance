@@ -1,0 +1,25 @@
+{
+  "hash": "c25b0140",
+  "configHash": "fe2107e9",
+  "lockfileHash": "62ac3dca",
+  "browserHash": "450612db",
+  "optimized": {
+    "firebase/database": {
+      "src": "../../node_modules/firebase/database/dist/esm/index.esm.js",
+      "file": "firebase_database.js",
+      "fileHash": "82a4cf7f",
+      "needsInterop": false
+    },
+    "firebase/app": {
+      "src": "../../node_modules/firebase/app/dist/esm/index.esm.js",
+      "file": "firebase_app.js",
+      "fileHash": "884d7722",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-A6SF2TGM": {
+      "file": "chunk-A6SF2TGM.js"
+    }
+  }
+}
