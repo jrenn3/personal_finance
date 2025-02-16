@@ -39,9 +39,6 @@ jobs:
         # Checkout the current working branch (whatever triggered the workflow)
         CURRENT_BRANCH=$(git branch --show-current)
         
-        # Fetch latest changes
-        git fetch origin
-
         # Switch to the deploy-onrender branch (create it if it doesn't exist)
         if git rev-parse --verify origin/deploy-onrender; then
           git checkout deploy-onrender
