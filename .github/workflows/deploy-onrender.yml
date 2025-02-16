@@ -46,6 +46,6 @@ jobs:
         git rm -rf .
 
         # Commit and force push the latest build
-        git add .
+        git add --all
         git commit -m "Deploy to https://excelbymoe.onrender.com/"
         git push --force origin deploy-onrender
