@@ -2,7 +2,7 @@ import './styles/styles.css';
 import { setupModal, showDownloadPopup, setupShowModalBtns, setupDownloadCount } from './common';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const modelURL = '/personal_finance/files/FUNdsForecastModel_v5.zip';
+    const modelURL = '/files/FUNdsForecastModel_v5.zip';
     const showModalBtns = document.querySelectorAll('.showModalBtn');
     const copyLinkBtn = document.getElementById('copyLinkBtn');
     const downloadButton = document.querySelector('.downloadButton'); // Updated selector
