@@ -1,4 +1,4 @@
-name: Deploy to Render
+name: Deploy on Render
 
 on:
   workflow_dispatch:
@@ -29,31 +29,26 @@ jobs:
     - name: Build project
       run: npm run build
 
-    - name: Deploy to deploy-to-render Branch
+    - name: Deploy to deploy-onrender Branch
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         
-        # Temporarily copy dist/ to a safe location
-        mkdir -p /tmp/deploy-dist
-        cp -r dist/* /tmp/deploy-dist/
-
-        if git rev-parse --verify deploy-to-render; then
-          git checkout deploy-to-render
+        if git rev-parse --verify deploy-onrender; then
+          git checkout deploy-onrender
         else
-          git checkout -b deploy-to-render
+          git checkout -b deploy-onrender
         fi
         
-        # Delete the contents of deploy-to-render branch
+        # Delete the contents of deploy-onrender branch
         git rm -rf .
 
-        # Restore dist files to the branch
-        cp -r /tmp/deploy-dist/* .
-        rm -rf /tmp/deploy-dist  # Clean up temp folder
+        # Copy all files from the current branch to deploy-onrender branch
+        cp -r . .
 
         # Commit and force push the latest build
         git add .
-        git commit -m "Deploy built files to Render"
-        git push --force origin deploy-to-render
+        git commit -m "Deploy to https://excelbymoe.onrender.com/"
+        git push --force origin deploy-onrender

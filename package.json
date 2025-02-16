@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "start": "vite preview --host",
-    "deploy": "gh workflow run deploy-to-render.yml"
+    "deploy": "gh workflow run deploy-onrender.yml"
   },
   "keywords": [],
   "author": "",
