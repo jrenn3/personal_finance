@@ -45,6 +45,9 @@ jobs:
         else
           git checkout -b deploy-to-render
         fi
+        
+        # Delete the contents of deploy-to-render branch
+        git rm -rf .
 
         # Restore dist files to the branch
         cp -r /tmp/deploy-dist/* .
