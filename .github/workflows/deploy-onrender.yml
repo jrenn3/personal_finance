@@ -35,17 +35,25 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
+        # Checkout the current working branch (whatever triggered the workflow)
+        CURRENT_BRANCH=$(git branch --show-current)
         
-        if git rev-parse --verify deploy-onrender; then
+        # Fetch latest changes
+        git fetch origin
+
+        # Switch to the deploy-onrender branch (create it if it doesn't exist)
+        if git rev-parse --verify origin/deploy-onrender; then
           git checkout deploy-onrender
+          git reset --hard origin/$CURRENT_BRANCH
         else
           git checkout -b deploy-onrender
         fi
-        
-        # Delete the contents of deploy-onrender branch
-        git rm -rf .
 
-        # Commit and force push the latest build
+        # Remove node_modules and other unnecessary files
+        rm -rf node_modules package-lock.json
+
+        # Add and commit everything from the working branch
         git add --all
-        git commit -m "Deploy to https://excelbymoe.onrender.com/"
+        git commit -m "Deploying latest changes from $CURRENT_BRANCH to deploy-onrender"
         git push --force origin deploy-onrender
