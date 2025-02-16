@@ -35,11 +35,18 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+
         if git rev-parse --verify deploy-to-render; then
           git checkout deploy-to-render
         else
           git checkout -b deploy-to-render
         fi
-        git add dist
-        git commit -m 'Deploy to Render'
-        git push origin deploy-to-render --force
+
+        # Copy only dist files into the branch
+        cp -r ../dist/* .
+        rm -rf ../dist  # Clean up moved dist folder
+
+        # Commit and force push the latest build
+        git add .
+        git commit -m "Deploy built files to Render"
+        git push --force origin deploy-to-render
