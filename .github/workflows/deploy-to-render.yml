@@ -35,6 +35,10 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        
+        # Temporarily copy dist/ to a safe location
+        mkdir -p /tmp/deploy-dist
+        cp -r dist/* /tmp/deploy-dist/
 
         if git rev-parse --verify deploy-to-render; then
           git checkout deploy-to-render
@@ -42,9 +46,9 @@ jobs:
           git checkout -b deploy-to-render
         fi
 
-        # Copy only dist files into the branch
-        cp -r ../dist/* .
-        rm -rf ../dist  # Clean up moved dist folder
+        # Restore dist files to the branch
+        cp -r /tmp/deploy-dist/* .
+        rm -rf /tmp/deploy-dist  # Clean up temp folder
 
         # Commit and force push the latest build
         git add .
