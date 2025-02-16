@@ -45,9 +45,6 @@ jobs:
         # Delete the contents of deploy-onrender branch
         git rm -rf .
 
-        # Copy all files from the current branch to deploy-onrender branch
-        cp -r . .
-
         # Commit and force push the latest build
         git add .
         git commit -m "Deploy to https://excelbymoe.onrender.com/"
