@@ -15,19 +15,10 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Remove node_modules and package-lock.json
-      run: rm -rf node_modules package-lock.json 
-
     - name: Setup Node.js
       uses: actions/setup-node@v3
       with:
         node-version: '18'
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Build project
-      run: npm run build
 
     - name: Deploy to deploy-onrender Branch
       env:
@@ -47,10 +38,7 @@ jobs:
           git checkout -b deploy-onrender
         fi
 
-        # Remove node_modules and other unnecessary files
-        rm -rf node_modules package-lock.json
-
         # Add and commit everything from the working branch
         git add --all
-        git commit -m "Deploying latest changes from $CURRENT_BRANCH to deploy-onrender"
+        git commit -m "Deploying from $CURRENT_BRANCH to deploy-onrender"
         git push --force origin deploy-onrender
