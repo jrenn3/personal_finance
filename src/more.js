@@ -1,5 +1,5 @@
 import './styles/styles.css';
-import { setupModal, showDownloadPopup, setupShowModalBtns, setupDownloadCount } from './common';
+import { setupModal, showDownloadPopup, setupShowModalBtns, setupDownloadCount, renderFooter } from './common';
 
 document.addEventListener('DOMContentLoaded', () => {
     const modelURL = '../../files/TEMPLATE_ReceiptSplitter_ByMoe_v5.xlsx';
@@ -12,4 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
     downloadButton.addEventListener('click', () => {
         showDownloadPopup();
     });
+
+    const footerContainer = document.getElementById('footerContainer');
+    footerContainer.innerHTML = renderFooter();
 });

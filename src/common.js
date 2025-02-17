@@ -77,3 +77,20 @@ export const setupDownloadCount = () => {
         downloadCountElement.textContent = `${totalDownloads} happy downloads`;
     });
 };
+
+export const renderFooter = () => {
+    return `
+        <footer class="py-4 bg-primary text-white text-center">
+            <p>Website and Excel model created from scratch by Joseph M. Renner.</p> 
+            <div class="flex justify-center space-x-6 my-2">
+                <a href="https://github.com/jrenn3" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github text-2xl hover:text-support-gold"></i>
+                </a>
+                <a href="https://linkedin.com/in/j-renner" target="_blank" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin text-2xl hover:text-support-gold"></i>
+                </a>
+            </div>
+            <p>&copy; 2025 By Moe. All Rights Reserved. Not financial advice.</p>
+        </footer>
+    `;
+};

@@ -1,16 +1,15 @@
 import './styles/styles.css';
-import { setupModal, showDownloadPopup, setupShowModalBtns, setupDownloadCount } from './common';
+import { setupModal, showDownloadPopup, setupShowModalBtns, setupDownloadCount, renderFooter } from './common';
 
 document.addEventListener('DOMContentLoaded', () => {
-    const modelURL = '/files/FUNdsForecastModel_v5.zip';
-    const showModalBtns = document.querySelectorAll('.showModalBtn');
-    const copyLinkBtn = document.getElementById('copyLinkBtn');
-    const downloadButton = document.querySelector('.downloadButton'); // Updated selector
-
-    setupShowModalBtns(showModalBtns, 'userModal');
-    setupModal('userModal', 'userForm', modelURL);
     setupDownloadCount();
 
+    const modelURL = '/files/FUNdsForecastModel_v5.zip';
+    const showModalBtns = document.querySelectorAll('.showModalBtn');  
+    setupShowModalBtns(showModalBtns, 'userModal');
+    setupModal('userModal', 'userForm', modelURL);
+
+    const copyLinkBtn = document.getElementById('copyLinkBtn');
     copyLinkBtn.addEventListener('click', async () => {
         const urlToCopy = window.location.href;
 
@@ -22,7 +21,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    const downloadButton = document.querySelector('.downloadButton'); // Updated selector
     downloadButton.addEventListener('click', () => {
         showDownloadPopup();
     });
+
+    const footerContainer = document.getElementById('footerContainer');
+    footerContainer.innerHTML = renderFooter();
 });
