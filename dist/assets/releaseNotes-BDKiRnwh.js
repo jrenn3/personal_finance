@@ -1,0 +1,1 @@
+import{r as t,d as r}from"./common-BVS8Q2nh.js";document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("footerContainer");e.innerHTML=t();const n=document.getElementById("headerContainer");n.innerHTML=r()});
