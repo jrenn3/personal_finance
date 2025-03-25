@@ -6,5 +6,5 @@ document.addEventListener('DOMContentLoaded', () => {
     footerContainer.innerHTML = renderFooter();
 
     const headerContainer = document.getElementById('headerContainer');
-    headerContainer.innerHTML = renderHeader();
+    headerContainer.innerHTML = renderHeader(); 
 });
