@@ -78,6 +78,24 @@ export const setupDownloadCount = () => {
     });
 };
 
+export const renderHeader = () => {
+    return `
+        <header id="header" class="fixed top-0 left-0 w-full bg-white z-50 shadow-sm transition-all duration-300">
+            <div class="container mx-auto flex justify-center items-center px-6 py-4">
+                <div class="logo mr-auto">
+                    <a href="#" class="text-lg font-giaza text-primary tracking-tighter">FUNds</a>  
+                </div>  
+                <!-- Navigation Menu -->
+                <nav class="md:flex space-x-8">
+                    <a href="../../index.html" class="text-neutral-dark hover:text-primary">Home</a>
+                    <a href="../../src/pages/more.html" class="text-neutral-dark hover:text-primary">More</a>
+                    <a href="../../src/pages/release-notes.html" class="text-neutral-dark hover:text-primary">Release Notes</a>
+                </nav>
+            </div>
+        </header>
+    `;
+}
+
 export const renderFooter = () => {
     return `
         <footer class="py-4 bg-primary text-white text-center">
