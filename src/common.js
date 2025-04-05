@@ -14,8 +14,14 @@ export const setupModal = (modalId, formId, modelURL) => {
         const timestamp = new Date().toISOString();
         const modelName = modelURL.split('/').pop();
 
+        const databasePath = modalId === 'userModal' 
+            ? 'FUNds-downloads/' 
+            : modalId === 'userModal-Receipt' 
+            ? 'ReceiptSplitter-downloads/' 
+            : 'downloads/';
+
         try {
-            await push(ref(database, 'downloads/'), {
+            await push(ref(database, databasePath), {
                 name,
                 email,
                 modelName,

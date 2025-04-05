@@ -1,1 +1,0 @@
-import{r as t,d as r}from"./common-C_OM5-Ui.js";document.addEventListener("DOMContentLoaded",()=>{const e=document.getElementById("footerContainer");e.innerHTML=t();const n=document.getElementById("headerContainer");n.innerHTML=r()});
