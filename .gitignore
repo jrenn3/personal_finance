@@ -5,3 +5,4 @@ node_modules/
 public/.DS_Store
 node_modules/.cache/gh-pages/git@github.com!jrenn3!personal_finance.git
 .chache/
+documentation.md
